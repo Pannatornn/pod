@@ -1,109 +1,43 @@
-import Image from "next/image";
+import { media, crops, awards } from "../data/profile";
+import { MediaButton } from "./Media";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  link?: string;
-}
-
-const featuredProjects: Project[] = [
-  {
-    id: 1,
-    title: "NeuraWeb – Futuristic AI Website Landing Design",
-    description: "A sleek, dark-themed AI-powered landing page concept built in Figma. Designed for modern startups and futuristic digital products, it features glowing neon visuals, immersive UI, and a dynamic tone. The design encapsulates the cutting-edge possibilities of AI and tech, offering a glimpse into the future of online experiences for tech-forward companies.",
-    link: "https://www.figma.com/community/file/1441377868897233703/ai-website-landing-design",
-    image: "/projects/project-1.png",
-  },
-  {
-    id: 2,
-    title: "Apple Vision Pro – HR Software Design",
-    description: "A futuristic HR software concept designed for Apple Vision Pro, built in Figma to reimagine attendance, leave tracking, and employee experience - all in one immersive interface.",
-   link: "https://www.figma.com/community/file/1371824014208363481/apple-vision-pro-hr-software-design",
-    image: "/projects/project-2.png",
-  },
-];
-
-export default function Projects(): React.JSX.Element {
+export default function Projects() {
   return (
-    <section id="lab" className="py-20 px-6">
-      <div className="container mx-auto max-w-7xl">
-        {featuredProjects.map((project, index) => {
-          const isEven = index % 2 === 1;
-          
-          return (
-            <div key={project.id} className="mb-20 last:mb-0">
-              <div className={`relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
-                isEven ? "lg:grid-flow-dense" : ""
-              }`}>
-                {/* Text Content */}
-                <div className={`${isEven ? "lg:col-start-2" : ""}`}>
-                  <p className="text-purple-400 text-lg lg:text-xl mb-2 font-medium">
-                    Featured Project
-                  </p>
-                  <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                    {project.title}
-                  </h3>
-                  {/* Description Card - extends over image */}
-                  <div className="relative z-10 mb-6">
-                    <div className={`bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-white/10 shadow-lg ${
-                      isEven ? "lg:ml-[-20%]" : "lg:w-[calc(100%+20%)]"
-                    }`}>
-                      <p className="text-white/90 text-base lg:text-lg leading-relaxed">
-                        {project.description}
-                      </p>
-                    </div>
-                  </div>
-                  {/* Website link */}
-                  {project.link && (
-                    <div className="flex gap-4">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-purple-400 transition-colors duration-200"
-                        aria-label="Visit project website"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="w-6 h-6"
-                        >
-                          <circle cx="12" cy="12" r="10" />
-                          <line x1="2" y1="12" x2="22" y2="12" />
-                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                        </svg>
-                      </a>
-                    </div>
-                  )}
-                </div>
-
-                {/* Image Content */}
-                <div className={`${isEven ? "lg:col-start-1 lg:row-start-1" : ""}`}>
-                  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-950 p-2 lg:p-3 shadow-2xl">
-                    <div className="relative w-full h-full rounded-lg overflow-hidden">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+    <section id="projects" className="section project-section">
+      <div className="shell">
+        <div className="section-heading heading-with-aside" data-reveal>
+          <div><p className="eyebrow">02 / FEATURED PROJECT</p><h2>เปลี่ยนไอเดีย<span className="accent">ให้ทำงานได้จริง</span></h2></div>
+          <span className="section-aside">ROBOTICS × AI × CLEAN ENERGY</span>
+        </div>
+        <article className="featured-project" id="project-solar" data-reveal>
+          <div className="project-image-area">
+            <div className="project-kicker"><span className="status-dot" /> SOLAR-POWERED ROBOT<span>01</span></div>
+            <MediaButton src={media.project} crop={crops.robot} alt="หุ่นยนต์พลังงานแสงอาทิตย์สำหรับสำรวจพื้นที่และค้นหาผู้ประสบอุทกภัย" label="ดูตัวหุ่นยนต์" />
+            <div className="project-image-caption"><span>พลังงานแสงอาทิตย์ + แบตเตอรี่</span><span>Raspberry Pi / ESP32</span></div>
+          </div>
+          <div className="project-intro">
+            <p className="eyebrow">Solar-powered Flood Survey and Victim Search Robot</p>
+            <h3>หุ่นยนต์สำรวจพื้นที่<br />และค้นหาผู้ประสบอุทกภัย</h3>
+            <p>พัฒนาหุ่นยนต์สำรวจพื้นที่ทางน้ำ โดยใช้ Raspberry Pi และ ESP32 ร่วมกับ AI, GPS และ Water Flow Sensor เพื่อส่งภาพและข้อมูลแบบเรียลไทม์ผ่าน Web Dashboard ใช้พลังงานแสงอาทิตย์ร่วมกับแบตเตอรี่เพื่อยืดเวลาการทำงาน</p>
+            <div className="tag-list"><span>Python</span><span>OpenCV / YOLO</span><span>Flask</span><span>MySQL</span><span>GPS NEO-6M</span></div>
+          </div>
+          <div className="project-details">
+            <div><h4><span className="accent">01</span> สิ่งที่ระบบทำได้</h4><ul className="feature-list">
+              <li>ตรวจจับคนจากภาพด้วย AI</li><li>ติดตามตำแหน่ง GPS แบบเรียลไทม์</li><li>ตรวจวัดอัตราการไหลของน้ำ</li><li>แสดงภาพและข้อมูลผ่าน Web Dashboard</li><li>ใช้ระบบพลังงานแสงอาทิตย์ร่วมกับแบตเตอรี่</li>
+            </ul></div>
+            <div><h4><span className="accent">02</span> ส่วนที่ผมรับผิดชอบ</h4><ul className="feature-list">
+              <li>ออกแบบโครงสร้างหุ่นยนต์</li><li>เชื่อมต่อวงจรอิเล็กทรอนิกส์และเซนเซอร์</li><li>เขียนโปรแกรมเชื่อมต่อ GPS และ Water Flow Sensor</li><li>พัฒนา Human Detection ด้วย AI จากภาพ</li><li>ทดสอบและปรับปรุงประสิทธิภาพของระบบ</li>
+            </ul></div>
+          </div>
+          <div className="project-gallery">
+            <MediaButton src={media.project} crop={crops.robotDemo} alt="การทดลองตรวจจับคนจากภาพด้วย YOLO" label="ดูการทดสอบ AI" />
+            <MediaButton src={media.project} crop={crops.fieldTest} alt="การนำหุ่นยนต์ไปทดสอบในพื้นที่ทางน้ำ" label="ดูการทดสอบภาคสนาม" />
+          </div>
+          <details className="award-details"><summary><span>รางวัลจากโปรเจกต์นี้ <span className="count-badge">{awards.length}</span></span><span className="details-indicator" aria-hidden="true">+</span></summary>
+            <div className="award-list">{awards.map((award, index) => <div className="award-row" key={index}><span className="award-year">{award.year}</span><div><h4>{award.result}</h4><p>{award.event}</p><span className="muted">{award.detail}</span></div><span className="award-icon" aria-hidden="true">✧</span></div>)}</div>
+          </details>
+        </article>
       </div>
     </section>
   );
 }
-

@@ -1,46 +1,24 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client";
 
-export default function Header(): React.JSX.Element {
+import { useState } from "react";
+const links = [
+  ["เกี่ยวกับผม", "#about"], ["โปรเจกต์", "#projects"], ["ประสบการณ์", "#experience"],
+  ["ทักษะ", "#skills"], ["เกียรติบัตร", "#certificates"],
+];
+export default function Header() {
+  const [open, setOpen] = useState(false);
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#110720]/80 backdrop-blur-sm border-b border-white/10">
-      <nav className="px-6 py-4">
-        <div className="container mx-auto max-w-6xl flex items-center justify-between h-full">
-          <Link 
-            href="/" 
-            className="text-2xl font-bold text-white hover:text-purple-400 transition-colors"
-          >
-          <Image src="/logo/logo.svg" alt="Logo" width={100} height={100} style={{ width: "auto", height: "auto" }} />
-          </Link>
-          <ul className="flex items-center gap-8 list-none m-0 p-0">
-            <li className="m-0 p-0">
-              <Link 
-                href="#home" 
-                className="text-white hover:text-purple-400 transition-colors text-base font-normal"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="m-0 p-0">
-              <Link 
-                href="#about" 
-                className="text-white hover:text-purple-400 transition-colors text-base font-normal"
-              >
-                About
-              </Link>
-            </li>
-            <li className="m-0 p-0">
-              <Link 
-                href="#lab" 
-                className="text-white hover:text-purple-400 transition-colors text-base font-normal"
-              >
-                Lab
-              </Link>
-            </li>
-          </ul>
+    <header className="site-header">
+      <nav className="shell navigation" aria-label="เมนูหลัก">
+        <a href="#home" className="brand" onClick={() => setOpen(false)} aria-label="Pannatorn — หน้าแรก">
+          <span className="brand-mark" aria-hidden="true">p<span>.</span></span><span>PANNATORN<span className="brand-sub">ROBOTS. CODE. CURIOSITY.</span></span>
+        </a>
+        <button className="menu-toggle" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? "ปิด ✕" : "เมนู ☰"}</button>
+        <div id="main-navigation" className={`nav-links ${open ? "is-open" : ""}`}>
+          {links.map(([title, href]) => <a key={href} href={href} onClick={() => setOpen(false)}>{title}</a>)}
+          <a href="#contact" className="nav-contact" onClick={() => setOpen(false)}>ติดต่อ <span aria-hidden="true">↗</span></a>
         </div>
       </nav>
     </header>
   );
 }
-

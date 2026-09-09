@@ -1,81 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
-
+import { Noto_Sans_Thai, Poppins } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  display: "swap",
-});
+const thai = Noto_Sans_Thai({ subsets: ["thai", "latin"], weight: ["400", "500", "600", "700"], variable: "--font-thai", display: "swap" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-poppins", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Ibrahim Memon - Software Engineer & UI/UX Designer",
-  description: "A self-taught UI/UX designer and Software Engineer at WebHR. Creating meaningful and delightful digital products that balance user needs and business goals. 3+ years of industry experience.",
-  keywords: [
-    "Ibrahim Memon",
-    "Software Engineer",
-    "UI/UX Designer",
-    "Frontend Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Web Designer",
-    "WebHR Engineer",
-    "Portfolio",
-  ],
-  authors: [{ name: "Ibrahim Memon" }],
-  creator: "Ibrahim Memon",
-  publisher: "Ibrahim Memon",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://ibiimemon.com",
-    title: "Ibrahim Memon - Software Engineer & UI/UX Designer",
-    description: "A self-taught UI/UX designer and Software Engineer at WebHR. Creating meaningful and delightful digital products.",
-    siteName: "Ibrahim Memon Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ibrahim Memon - Software Engineer & UI/UX Designer",
-    description: "A self-taught UI/UX designer and Software Engineer at WebHR.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  metadataBase: new URL("https://pod-ptum.onrender.com"),
+  title: "ปัณณธร ทองรักษ์ | Robotics, Code & Engineering",
+  description: "รู้จักปัน — Pannatorn Thongrak ผ่านโปรเจกต์หุ่นยนต์พลังงานแสงอาทิตย์ การเขียนโปรแกรม ประสบการณ์ค่ายวิศวกรรม และเกียรติบัตร",
+  authors: [{ name: "Pannatorn Thongrak" }],
+  alternates: { canonical: "/" },
+  icons: { icon: "/icon.svg" },
+  openGraph: { type: "website", locale: "th_TH", url: "/", title: "ปัณณธร ทองรักษ์", description: "จากความสงสัย สู่การลงมือสร้าง — Robotics, Programming & Engineering", siteName: "Pannatorn" },
+  twitter: { card: "summary", title: "Pannatorn Thongrak", description: "Robotics, Programming & Engineering" },
 };
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <head>
-        <link rel="canonical" href="https://ibiimemon.com" />
-      </head>
-      <body
-        className={`${poppins.variable} font-sans antialiased`}
-      >
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  );
+export const viewport: Viewport = { width: "device-width", initialScale: 1 };
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="th"><body className={`${thai.variable} ${poppins.variable}`}>{children}</body></html>;
 }

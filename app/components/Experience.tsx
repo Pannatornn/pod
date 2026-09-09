@@ -1,84 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
+import { crops, media } from "../data/profile";
+import { MediaButton } from "./Media";
 
-interface ExperienceCard {
-  id: number;
-  title: string;
-  description: string;
-  icon: string;
-}
-
-const experienceCards: ExperienceCard[] = [
-  {
-    id: 1,
-    title: "WebHR - HR Management App",
-    description: "WebHR automates all of your company's HR processes such as Recruitment, Onboarding, Payroll, Time & Attendance, Leaves & PTO, Performance, and much more.",
-    icon: "/cards/card-1.png",
-  },
-  {
-    id: 2,
-    title: "WebHR Kiosk - Time Clock Kiosk",
-    description: "WebHR Kiosk is a time clock kiosk that allows you to clock in and out of your work. It is a simple and easy to use app that allows you to clock in and out of your work.",
-    icon: "/cards/card-2.png",
-  },
-  {
-    id: 3,
-    title: "Somezing - AI-Powered Agents",
-    description: "Somezing is a AI-Powered Agents to Automate Your Workflows. It is a simple and easy to use app that allows you to automate your workflows.",
-    icon: "/cards/card-3.png",
-  },
-  {
-    id: 4,
-    title: "FileIT - File Sharing App",
-    description: "FileIT is a file sharing app that allows you to share files with your friends and family. It is a simple and easy to use app that allows you to share files with your friends and family.",
-    icon: "/cards/card-4.png",
-  },
+const experiences = [
+  { id: "kmitl-camp", date: "2–3 พ.ค. 2569", label: "ROBOTICS & AI", title: "Robotics and AI Frontier Camp 2026", place: "ภาควิชาหุ่นยนต์และปัญญาประดิษฐ์ · คณะวิศวกรรมศาสตร์ สจล.", description: "เข้าร่วม Mechatronics Program เรียนรู้การเขียนโปรแกรม การใช้งาน AI ร่วมกับบอร์ด Arduino Q และการจำลองแขนกล ABB พร้อมฝึกทำงานร่วมกับเพื่อนในค่าย", learning: ["ABB RobotStudio", "Arduino App Lab", "Industrial Automation / PLC", "AI ตรวจจับสีและวัตถุ"], src: media.camps, crop: crops.kmitl },
+  { id: "ku-camp", date: "19–21 ธ.ค. 2568", label: "COMPUTER ENGINEERING", title: "ค่ายลองของ ครั้งที่ 5", place: "ภาควิชาวิศวกรรมคอมพิวเตอร์ · มหาวิทยาลัยเกษตรศาสตร์", description: "เขียน MicroPython ควบคุม ESP32 ให้เชื่อมต่อ Wi-Fi และรับส่งข้อมูลผ่าน MQTT ร่วมกับทีมสร้างระบบแจ้งเตือนทางแชตและสั่งงานหลอด LED พร้อมฝึกออกแบบระบบในกิจกรรม Hackathon", learning: ["MicroPython / ESP32", "MQTT", "System Design", "5W1H / Teamwork"], src: media.camps, crop: crops.ku },
 ];
-
-export default function Experience(): React.JSX.Element {
+export default function Experience() {
   return (
-    <section id="experience" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl lg:text-5xl font-bold text-white mb-12 text-center">
-          Work Experience
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {experienceCards.map((card) => (
-            <div
-              key={card.id}
-              className="bg-gradient-to-r from-slate-950 via-purple-950 to-slate-950  backdrop-blur-sm rounded-xl p-6 border-t-3 border-purple-700 hover:shadow-2xl hover:shadow-purple-900 flex items-center gap-4"
-            >
-              <div className="mb-4 ">
-                <Image
-                  src={card.icon}
-                  alt={card.title}
-                  width={160}
-                  height={160}
-                  className="object-contain"
-                />
-              </div>
-              <div>
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {card.title}
-              </h3>
-              <p className="text-white/70 text-sm mb-4">
-                {card.description}
-              </p>
-              <Link
-                href="https://ibiimemon.com/lab"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-400 hover:text-purple-300 font-medium text-sm transition-colors inline-block"
-              >
-                LEARN MORE →
-              </Link>
-              </div>
-
-            </div>
-          ))}
-        </div>
-      </div>
+    <section id="experience" className="section shell">
+      <div className="section-heading" data-reveal><p className="eyebrow">03 / EXPERIENCES</p><h2>เรียนรู้จาก<span className="accent">ประสบการณ์</span></h2><p>ออกไปพบโจทย์ใหม่ ลงมือทำ และเรียนรู้ไปกับคนที่สนใจสิ่งเดียวกัน</p></div>
+      <div className="experience-list">{experiences.map((item, index) => (
+        <article className="experience-card" key={item.id} data-reveal>
+          <div className="experience-photo"><MediaButton src={item.src} crop={item.crop} alt={item.title} label="ดูภาพกิจกรรม" /></div>
+          <div className="experience-copy"><div className="experience-meta"><span>{item.label}</span><time>{item.date}</time></div><h3>{item.title}</h3><p className="experience-place">{item.place}</p><p>{item.description}</p><div className="tag-list">{item.learning.map(skill => <span key={skill}>{skill}</span>)}</div><span className="experience-index" aria-hidden="true">0{index + 1}</span></div>
+        </article>
+      ))}</div>
+      <article className="competition-strip" data-reveal><span className="code-symbol" aria-hidden="true">&lt;/&gt;</span><div><p className="eyebrow">6 ตุลาคม 2567 · มจธ.</p><h3>การแข่งขันแก้ปัญหาด้วยการเขียนโปรแกรมคอมพิวเตอร์</h3><p>เข้าร่วมการแข่งขันระดับมัธยมศึกษาตอนปลาย จัดโดยภาควิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี</p></div><a className="text-link" href="#certificates">ดูเกียรติบัตร ↗</a></article>
     </section>
   );
 }
-
