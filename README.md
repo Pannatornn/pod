@@ -1,100 +1,96 @@
-# Pannatorn — เว็บไซต์ส่วนตัว
+# Pannatorn Thongrak — Interactive Portfolio
 
-เว็บไซต์ Next.js / React สำหรับนำไปปรับเป็นเว็บรวบรวมโปรเจกต์ ประสบการณ์ และเกียรติบัตรด้านเทคโนโลยี คอมพิวเตอร์ วิศวกรรม และหุ่นยนต์
+เว็บไซต์พอร์ตโฟลิโอของ **ปัณณธร ทองรักษ์ (ปัน)** รวบรวมผลงานด้านเทคโนโลยี หุ่นยนต์ และวิศวกรรม พร้อมแอนิเมชัน เมนูสำหรับมือถือ และแกลเลอรีภาพที่กดขยายได้
 
-Repository: https://github.com/Pannatornn/pod
+Repository: [Pannatornn/pod](https://github.com/Pannatornn/pod)
 
-นำเข้าจาก [Figma-Portfolio ของ Ibrahim Memon](https://github.com/ibrahimmemonn/Figma-Portfolio) ที่ commit `aa87941e74224d4dda3e317a725c944e14ba52f2`
+Render เดิม: [pod-ptum.onrender.com](https://pod-ptum.onrender.com) — ตรวจสอบสถานะ deploy ล่าสุดใน Render หรือ GitHub ก่อนยืนยันว่าเว็บแสดงเวอร์ชันใหม่แล้ว
 
-**เว็บไซต์:** https://pod-ptum.onrender.com
+## เนื้อหาปัจจุบัน
 
-**สถานะ:** ปรับหน้าเว็บเป็นข้อมูลของปัณณธร ทองรักษ์ (Pannatorn Thongrak) แล้ว โดยใช้ข้อความและภาพจากเอกสารที่เจ้าของเว็บส่งให้ 4 หน้า ประกอบด้วยโปรเจกต์หุ่นยนต์พลังงานแสงอาทิตย์ รางวัล 5 รายการ กิจกรรมค่าย 2 กิจกรรม การแข่งขันเขียนโปรแกรม และเกียรติบัตร 4 รายการ อ่านรายละเอียดที่มาใน [CONTENT-SOURCES.md](CONTENT-SOURCES.md)
+1. **Profile** — ชื่อไทย/อังกฤษ ชื่อเล่น วันเกิด การศึกษา 3 ระดับ ทักษะ 8 รายการ ความสามารถ และความสนใจ
+2. **Transcript** — ช่องภาพใบแสดงผลการเรียน 2 ภาพ ยังไม่ได้เพิ่มภาพหรือเกรด
+3. **SOP** — เว้นเนื้อหา Statement of Purpose ไว้ตามคำขอ
+4. **Projects** — 2 รายการ: หุ่นยนต์สำรวจน้ำท่วมพลังงานแสงอาทิตย์ และช่องโครงงานที่สอง พร้อมภาพและพื้นที่คำอธิบาย
+5. **Experiences** — 4 รายการว่างสำหรับเพิ่มชื่อ รูป วันที่ และคำอธิบาย
+6. **Activities** — ค่าย KMITL, ค่ายลองของ ม.เกษตรศาสตร์, ค่าย Easy Robot ม.อ. แต่ละค่ายมีแกลเลอรีหลายภาพและคำบรรยาย พร้อมส่วนสำหรับอบรมและกิจกรรมอื่น
+7. **Certificates** — เกียรติบัตรเดิม 4 รายการ และพื้นที่เพิ่มเกียรติบัตรใหม่
+
+ข้อมูลรางวัลรองชนะเลิศอันดับ 1 จาก 5 ทีมของค่าย ม.อ. มาจากข้อมูลใหม่ที่เจ้าของเว็บให้ รูปค่ายนี้ยังเว้นไว้ ไม่มีการสร้างภาพหรือเกียรติบัตรแทนหลักฐานจริง
+
+## แก้ข้อมูลและเพิ่มภาพ
+
+ไฟล์หลักคือ [`portfolio/content.js`](portfolio/content.js) แก้ไขผ่าน GitHub แล้ว commit ไปยัง `main` ได้ ไม่ต้องแก้โค้ดส่วนแสดงผลสำหรับการเพิ่มข้อมูลทั่วไป
+
+1. อัปโหลดรูปใหม่ลงใน `portfolio/assets/` เช่น `transcript-1.jpg`, `project-02-1.jpg`, `psu-1.jpg`
+2. ใน `portfolio/content.js` เปลี่ยน `src: ''` เป็น `src: 'assets/ชื่อไฟล์.jpg'`
+3. ใส่หัวข้อและคำอธิบายในช่องข้อความที่เว้นไว้
+4. Commit การเปลี่ยนแปลง แล้วรอ Render deploy จาก `main`
+
+| ช่องข้อมูล | ตำแหน่งใน `portfolio/content.js` |
+| --- | --- |
+| ประวัติและทักษะ | `profile` |
+| ภาพใบเกรดสองภาพ | `transcript[0]`, `transcript[1]` |
+| ข้อความ SOP | `sop` — ใช้ `\n\n` แบ่งย่อหน้า |
+| รูปและคำบรรยายโครงงานแรก | `projects[0]` |
+| ชื่อ รูป และคำบรรยายโครงงานที่สอง | `projects[1]` |
+| ประสบการณ์ 4 รายการ | `experiences` |
+| รูปหลายภาพและข้อความค่ายทั้งสาม | `camps` |
+| อบรมและกิจกรรมอื่น | `workshops` |
+| เกียรติบัตรเพิ่มเติม | `extraCertificates` |
+
+เพิ่มภาพในแกลเลอรีได้โดยเพิ่ม `{ src: 'assets/photo.jpg', alt: 'คำอธิบายภาพ' }` ลงใน `images` รูปใหม่ทั่วไปไม่ต้องใส่ `box` เพราะ `box` ใช้เฉพาะตำแหน่งภาพย่อยในเอกสารต้นฉบับเดิม
+
+การเพิ่มไฟล์ต้องเป็นชื่อและนามสกุลตรงกับ `src` รวมถึงตัวพิมพ์ใหญ่/เล็ก ช่องว่างแสดงเป็นพื้นที่เตรียมข้อมูล ไม่ใช่ปุ่มอัปโหลด และไม่มีระบบบันทึกข้อมูลบนเซิร์ฟเวอร์
 
 ## เปิดใช้งานในเครื่อง
 
-ต้องติดตั้ง Git และ Node.js ตั้งแต่ 20.9 ขึ้นไป แนะนำใช้ Node.js 24 ตามไฟล์ `.nvmrc` ที่เตรียมไว้
+ต้องมี Node.js 20.9 ขึ้นไป โครงการปัจจุบันใช้ HTML, CSS และ JavaScript พร้อมสคริปต์ Node.js มาตรฐาน จึงเปิดเวอร์ชันนี้ได้โดยไม่ต้องติดตั้งแพ็กเกจเพิ่มเติม
 
 ```bash
-git clone https://github.com/Pannatornn/pod.git
-cd pod
-npm ci
 npm run dev
 ```
 
-เปิด http://localhost:3000 ในเบราว์เซอร์ของเครื่องที่รันคำสั่ง ปิดเซิร์ฟเวอร์ด้วย `Ctrl+C`
+เปิด `http://localhost:3000` ในเบราว์เซอร์
 
-Repo นี้เป็น Private จึงต้องใช้บัญชี GitHub ที่เข้าถึง repo ได้ในการ clone หรือดาวน์โหลดผ่านหน้า GitHub ด้วย Code → Download ZIP แล้วแตกไฟล์และเปิด Terminal ในโฟลเดอร์นั้น จากนั้นรัน `npm ci` และ `npm run dev`
-
-## รันเวอร์ชัน production ในเครื่องหรือเซิร์ฟเวอร์ Node.js
+สร้างไฟล์พร้อมเผยแพร่และเปิดเวอร์ชัน production:
 
 ```bash
 npm run build
 npm start
 ```
 
-เปิด http://localhost:3000 หลังเซิร์ฟเวอร์เริ่มทำงาน การเก็บโค้ดใน GitHub ยังไม่ได้ทำให้เว็บไซต์ออนไลน์ ต้องนำไปโฮสต์เพิ่มเติมเมื่อต้องการลิงก์สาธารณะ
+## ตั้งค่า Render
 
-## เผยแพร่ด้วย Render Static Site
-
-โค้ดรองรับการสร้างไฟล์เว็บแบบ static โดยเปิด `POD_STATIC_EXPORT=1` ระหว่าง build ผลลัพธ์จะอยู่ในโฟลเดอร์ `out` และยังใช้ JavaScript กับแอนิเมชันในเบราว์เซอร์ได้
-
-1. เปิด [Render Dashboard](https://dashboard.render.com/static/new) และเชื่อมต่อ GitHub ให้เข้าถึง repo `Pannatornn/pod` ได้
-2. เลือก **Static Site** และตั้งค่าตามตารางด้านล่าง
-3. กด **Create Static Site** แล้วรอให้สถานะเป็น **Live**
-4. เปิดลิงก์ `onrender.com` ที่ Render แสดง แล้วส่งลิงก์นั้นให้ผู้อื่นเข้าชมได้
+ใช้ **Static Site** และ repository นี้ สคริปต์ build จะตรวจเนื้อหาและไฟล์ภาพก่อนสร้างโฟลเดอร์ `out` ซึ่งตรงกับ publish directory เดิม
 
 | ช่อง | ค่า |
 | --- | --- |
-| Name | `pod` หรือชื่อที่ยังว่าง |
+| Repository | `https://github.com/Pannatornn/pod` |
 | Branch | `main` |
 | Root Directory | เว้นว่าง |
-| Build Command | `npm ci && npm run build` |
+| Build Command | `npm run build` |
 | Publish Directory | `out` |
-| Environment Variable | `POD_STATIC_EXPORT` = `1` |
-| Environment Variable | `SKIP_INSTALL_DEPS` = `true` |
+| Environment Variable | `SKIP_INSTALL_DEPS=true` |
 | Auto-Deploy | เปิด |
 
-`SKIP_INSTALL_DEPS=true` ให้ Render ใช้การติดตั้งจาก `npm ci` ใน Build Command โดยไม่ติดตั้งซ้ำ ส่วน Node.js ใช้เวอร์ชันตาม `.nvmrc`
+การตั้งค่าเดิม `npm ci && npm run build` ยังทำงานได้ เพราะเก็บรายการ dependencies และ lockfile เดิมไว้ การ build พอร์ตโฟลิโอเวอร์ชันนี้ไม่จำเป็นต้องใช้ `POD_STATIC_EXPORT`
 
-หลังเชื่อมต่อสำเร็จ การอัปเดตสาขา `main` จะให้ Render build และเผยแพร่เว็บใหม่อัตโนมัติ Repo ยังเป็น Private ได้ โดยอนุญาตให้ Render เข้าถึงผ่าน GitHub เท่านั้น
+[`render.yaml`](render.yaml) บันทึกการตั้งค่าสำหรับบริการ static ไม่จำเป็นต้องสร้างบริการซ้ำถ้ามี `pod-ptum.onrender.com` เชื่อมต่ออยู่แล้ว
 
-Static Site มีโควตาใช้งานฟรีตาม [เงื่อนไขของ Render](https://render.com/docs/static-sites) การตั้งค่าใน README นี้ยังไม่ถือว่าเว็บไซต์เผยแพร่แล้ว ต้องสร้างบริการและรอผล deploy บน Render ก่อน
+## โครงสร้างไฟล์
 
-การ build สำหรับเซิร์ฟเวอร์ Node.js ยังใช้ `npm run build` และ `npm start` ตามปกติ โดยไม่ตั้ง `POD_STATIC_EXPORT` ส่วนไฟล์ใน `out` ให้เปิดผ่าน static hosting
+- `portfolio/` — เว็บไซต์เวอร์ชันปัจจุบัน
+- `portfolio/content.js` — ข้อมูลที่เพิ่มและแก้ไขได้
+- `portfolio/content-renderer.js` — แสดงข้อมูล แกลเลอรี และพื้นที่ว่าง
+- `portfolio/app.js` — เมนู แอนิเมชัน และหน้าต่างรายละเอียดโครงงาน/เกียรติบัตรเดิม
+- `scripts/build-portfolio.mjs` — ตรวจไฟล์และสร้าง `out/`
+- `scripts/serve-portfolio.mjs` — เซิร์ฟเวอร์สำหรับเปิดใช้งานในเครื่องหรือ Node.js hosting
 
-## จุดที่ใช้เปลี่ยนข้อมูล
+## โค้ดและเครดิตเดิม
 
-| ไฟล์ | เนื้อหาที่แก้ไข |
-| --- | --- |
-| `app/components/Banner.tsx` | ชื่อ ข้อความแนะนำตัว และรูปหลัก |
-| `app/components/About.tsx` | เกี่ยวกับตัวเอง การศึกษา และทักษะ |
-| `app/data/profile.ts` | ข้อมูลส่วนตัว ทักษะ รางวัล เกียรติบัตร และตำแหน่งภาพ |
-| `app/components/Certificates.tsx` | ปุ่มกรองและรายการเกียรติบัตร |
-| `app/components/Media.tsx` | การแสดงภาพและหน้าต่างขยายภาพ |
-| `app/components/Experience.tsx` | ประสบการณ์และกิจกรรม |
-| `app/components/Projects.tsx` | โปรเจกต์และลิงก์ผลงาน |
-| `app/components/Header.tsx` | โลโก้และเมนูนำทาง |
-| `app/components/Footer.tsx` | อีเมลและช่องทางติดต่อ |
-| `app/layout.tsx` | ชื่อหน้า คำอธิบายเว็บ ข้อมูลสำหรับแชร์ และ canonical URL |
-| `app/page.tsx` | ลำดับส่วนต่าง ๆ ของหน้าเว็บ |
-| `app/globals.css` | สี ฟอนต์ และรูปแบบส่วนกลาง |
-| `public/assets/` | รูปประจำตัวและภาพประกอบ |
-| `public/projects/` | ภาพโปรเจกต์ต้นฉบับที่ไม่ได้แสดงบนเว็บปัจจุบัน |
-| `public/media/` | ภาพเอกสารที่เจ้าของเว็บส่งให้ โดยเก็บไฟล์เดิมครบทั้งหน้า |
+เก็บแอป Next.js เดิมไว้ใน `app/` และ `public/` รวมถึงรายการ dependencies และ lockfile เพื่อรักษางานก่อนหน้า หากต้องการเปิดเวอร์ชันเดิม ใช้ `npm ci` แล้ว `npm run dev:legacy`; คำสั่ง `build:legacy` และ `start:legacy` ยังคงเรียก Next.js ตามเดิม
 
-หน้าเว็บมีส่วนเกียรติบัตรที่กรองประเภทและกดขยายภาพได้ รองรับการปิดด้วยปุ่ม Escape และลดแอนิเมชันตามการตั้งค่า Reduce Motion ของอุปกรณ์
+โค้ด Next.js เดิมนำเข้าจาก Figma-Portfolio ของ Ibrahim Memon อ่านที่มาและเงื่อนไขใน [README-UPSTREAM.md](README-UPSTREAM.md) เว็บไซต์ปัจจุบันใน `portfolio/` เป็นงาน HTML/CSS/JavaScript ที่สร้างขึ้นสำหรับพอร์ตโฟลิโอนี้ และใช้ภาพที่เจ้าของเว็บแนบมา
 
-## การเชื่อมต่อภายนอก
-
-- การติดตั้ง dependencies ต้องใช้อินเทอร์เน็ต
-- ใช้ Noto Sans Thai และ Poppins ผ่าน `next/font/google` ซึ่งดาวน์โหลดฟอนต์ระหว่างการ build
-- นำ iframe Bookclipy และ Vercel Analytics ของต้นฉบับออกจากหน้าเว็บแล้ว
-- ไม่ต้องมี API key หรือฐานข้อมูลสำหรับเปิดหน้าเว็บพื้นฐาน
-
-## เครดิตและเงื่อนไขต้นฉบับ
-
-© Copyright 2025 Ibrahim Memon
-
-โปรดอ่าน [README ต้นฉบับและเงื่อนไขการใช้งาน](README-UPSTREAM.md#-licenses) เจ้าของอนุญาตให้ fork และทดลองปรับแต่ง แต่ระบุให้ขออนุญาตเป็นลายลักษณ์อักษรก่อนเผยแพร่ทั้งชุด การนำเข้า repo นี้ไม่ได้เปลี่ยนเงื่อนไขดังกล่าว
-
-ไฟล์ README-UPSTREAM.md เก็บข้อความต้นฉบับไว้เพื่อรักษาที่มาและเงื่อนไขการใช้งาน ส่วนคำสั่งสำหรับ repo นี้ให้ใช้ใน README นี้
+รูปเอกสารเดิม 4 ภาพคงข้อมูลต้นฉบับ โดยแสดงพื้นที่ภาพย่อยด้วย CSS ภาพบุคคลบางภาพมีวงกลมจากต้นฉบับอยู่แล้ว ส่วนข้อมูลใหม่ในค่ายและพื้นที่ว่างยึดคำสั่งของเจ้าของเว็บ
