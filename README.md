@@ -32,6 +32,34 @@ npm start
 
 เปิด http://localhost:3000 หลังเซิร์ฟเวอร์เริ่มทำงาน การเก็บโค้ดใน GitHub ยังไม่ได้ทำให้เว็บไซต์ออนไลน์ ต้องนำไปโฮสต์เพิ่มเติมเมื่อต้องการลิงก์สาธารณะ
 
+## เผยแพร่ด้วย Render Static Site
+
+โค้ดรองรับการสร้างไฟล์เว็บแบบ static โดยเปิด `POD_STATIC_EXPORT=1` ระหว่าง build ผลลัพธ์จะอยู่ในโฟลเดอร์ `out` และยังใช้ JavaScript กับแอนิเมชันในเบราว์เซอร์ได้
+
+1. เปิด [Render Dashboard](https://dashboard.render.com/static/new) และเชื่อมต่อ GitHub ให้เข้าถึง repo `Pannatornn/pod` ได้
+2. เลือก **Static Site** และตั้งค่าตามตารางด้านล่าง
+3. กด **Create Static Site** แล้วรอให้สถานะเป็น **Live**
+4. เปิดลิงก์ `onrender.com` ที่ Render แสดง แล้วส่งลิงก์นั้นให้ผู้อื่นเข้าชมได้
+
+| ช่อง | ค่า |
+| --- | --- |
+| Name | `pod` หรือชื่อที่ยังว่าง |
+| Branch | `main` |
+| Root Directory | เว้นว่าง |
+| Build Command | `npm ci && npm run build` |
+| Publish Directory | `out` |
+| Environment Variable | `POD_STATIC_EXPORT` = `1` |
+| Environment Variable | `SKIP_INSTALL_DEPS` = `true` |
+| Auto-Deploy | เปิด |
+
+`SKIP_INSTALL_DEPS=true` ให้ Render ใช้การติดตั้งจาก `npm ci` ใน Build Command โดยไม่ติดตั้งซ้ำ ส่วน Node.js ใช้เวอร์ชันตาม `.nvmrc`
+
+หลังเชื่อมต่อสำเร็จ การอัปเดตสาขา `main` จะให้ Render build และเผยแพร่เว็บใหม่อัตโนมัติ Repo ยังเป็น Private ได้ โดยอนุญาตให้ Render เข้าถึงผ่าน GitHub เท่านั้น
+
+Static Site มีโควตาใช้งานฟรีตาม [เงื่อนไขของ Render](https://render.com/docs/static-sites) การตั้งค่าใน README นี้ยังไม่ถือว่าเว็บไซต์เผยแพร่แล้ว ต้องสร้างบริการและรอผล deploy บน Render ก่อน
+
+การ build สำหรับเซิร์ฟเวอร์ Node.js ยังใช้ `npm run build` และ `npm start` ตามปกติ โดยไม่ตั้ง `POD_STATIC_EXPORT` ส่วนไฟล์ใน `out` ให้เปิดผ่าน static hosting
+
 ## จุดที่ใช้เปลี่ยนข้อมูล
 
 | ไฟล์ | เนื้อหาที่แก้ไข |
