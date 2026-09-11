@@ -5,14 +5,18 @@ export default function Home() {
   return (
     <main className="portfolio-page">
       <section className="hero">
-        <div>
-          <p className="tag">COMPUTER ENGINEERING PORTFOLIO</p>
-          <h1>Pannatorn Thongrak</h1>
+        <div className="hero-content">
+          <p className="eyebrow">COMPUTER ENGINEERING PORTFOLIO</p>
+          <h1>Pannatorn <span>Thongrak</span></h1>
           <h2>ปัณณธร ทองรักษ์ (ปัน)</h2>
-          <p>Creative Coder • Electronics Developer • Robotics Enthusiast</p>
-          <button>View My Work</button>
+          <p className="hero-description">Creative Coder • Electronics Developer • Robotics Enthusiast</p>
+          <div className="hero-actions">
+            <button className="button button-primary">View My Work</button>
+            <button className="button">Contact</button>
+          </div>
         </div>
-        <div className="profile-card">
+
+        <div className="portrait-card">
           <div className="avatar">P</div>
           <h3>Profile</h3>
           <p>เกิด 25 กุมภาพันธ์ 2552</p>
@@ -22,7 +26,7 @@ export default function Home() {
 
       <section className="section">
         <h2>Education</h2>
-        <div className="card">
+        <div className="education-card">
           <p>ประถมศึกษา: โรงเรียนพรศิริกุล</p>
           <p>มัธยมศึกษา: โรงเรียนสภาราชินี จังหวัดตรัง</p>
         </div>
@@ -31,14 +35,20 @@ export default function Home() {
       <section className="section">
         <h2>Technical Skills</h2>
         <div className="grid">
-          {skills.map((s)=><div className="card" key={s}>{s}</div>)}
+          {skills.map((item)=>(<div className="card" key={item}>{item}</div>))}
         </div>
       </section>
 
       <section className="section">
-        <h2>My Projects</h2>
+        <h2>Featured Projects</h2>
         <div className="grid">
-          {projects.map((p)=><div className="card project" key={p}>{p}<br/><span>View Details →</span></div>)}
+          {projects.map((item)=>(
+            <div className="card project" key={item}>
+              <h3>{item}</h3>
+              <p>Innovation project development</p>
+              <span>View Details →</span>
+            </div>
+          ))}
         </div>
       </section>
 
