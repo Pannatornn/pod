@@ -5,9 +5,8 @@ import { useState } from "react";
 const links = [
   ["เกี่ยวกับผม", "#about"],
   ["โปรเจกต์", "#projects"],
-  ["ประสบการณ์", "#experience"],
   ["ทักษะ", "#skills"],
-  ["เกียรติบัตร", "#certificates"],
+  ["ติดต่อ", "#contact"],
 ];
 
 export default function Header() {
@@ -34,7 +33,6 @@ export default function Header() {
             {title}
           </a>
         ))}
-        <a href="#contact" onClick={() => setOpen(false)}>ติดต่อ ↗</a>
       </nav>
     </header>
   );
