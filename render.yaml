@@ -4,9 +4,6 @@ services:
     runtime: static
     repo: https://github.com/Pannatornn/pod
     branch: main
-    buildCommand: npm run build
+    buildCommand: POD_STATIC_EXPORT=1 npm run build
     staticPublishPath: ./out
     autoDeployTrigger: commit
-    envVars:
-      - key: SKIP_INSTALL_DEPS
-        value: "true"
