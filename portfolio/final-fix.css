@@ -1,52 +1,46 @@
-/* Final UX/UI completion patch */
-.hero{overflow:hidden!important;align-items:stretch!important}
-.hero-copy{z-index:5!important}
-.hero-visual{z-index:1!important;transform:none!important;overflow:hidden!important}
-.hero-photo{overflow:hidden!important}
-.hero-photo img{max-width:none!important}
-.project-sticker{z-index:8!important}
-.hero-project-info{z-index:7!important}
-.header{z-index:1000!important}
-body{overflow-x:hidden!important}
+/* Emergency layout repair */
 
-/* emergency menu fix */
-.header nav:not(.open){opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(-10px)!important}
-.header nav.open{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important}
-.header nav{z-index:1001!important}
-
-/* restore hero after accidental menu overlay */
-.hero{position:relative!important}
-.hero-copy,.hero-visual{visibility:visible!important}
-
-/* Premium interaction */
-.section,.hero,.about-grid,.featured-project,.project-modules{transition:background-color .35s ease,border-color .35s ease}
-.button,.module-card,.circle-button,.motion-toggle{transition:transform .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease!important}
-.button:hover,.module-card:hover,.circle-button:hover{transform:translateY(-3px)}
-.button:active,.circle-button:active{transform:scale(.97)!important}
-img{object-fit:cover}
-.hero-visual,.project-figure,.module-card,.award-band{isolation:isolate}
-.section-intro,.project-copy>p,.dialog-main p{max-width:58ch}
-.project-copy{gap:4px}
-.header nav a{min-height:34px;display:flex;align-items:center}
-
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-
-@media(max-width:900px){
- .hero{display:flex!important;flex-direction:column!important;min-height:auto!important;gap:28px!important}
- .hero h1{font-size:54px!important;line-height:.9!important}
- .hero-visual{min-height:480px!important;width:100%!important}
- .project-sticker{right:12px!important;bottom:80px!important}
- .about-grid,.featured-project{grid-template-columns:1fr!important}
- .project-modules{grid-template-columns:1fr!important}
- .footer-main{grid-template-columns:1fr!important}
- .section-heading{flex-direction:column;align-items:flex-start}
+/* Menu must not cover homepage unless explicitly opened */
+.header nav{
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transform:translateY(-20px)!important;
+}
+.header nav.open{
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transform:none!important;
 }
 
-@media(max-width:600px){
- .container{width:calc(100% - 28px)!important}
- .hero h1{font-size:42px!important}
- .hero-actions{flex-wrap:wrap!important}
- .hero-visual{min-height:360px!important}
- .section{padding:55px 0!important}
- .footer-main .wordmark{font-size:40px!important}
+/* Fix hero overlap */
+.header{position:sticky!important;z-index:1000!important}
+.hero{
+  display:grid!important;
+  grid-template-columns:.47fr .53fr!important;
+  min-height:calc(100svh - 58px)!important;
+  overflow:hidden!important;
+}
+.hero-copy{position:relative!important;z-index:2!important}
+.hero-visual{position:relative!important;z-index:1!important}
+
+/* Remove accidental duplicate image overlays */
+.hero-visual::before,
+.hero-visual::after{
+  pointer-events:none!important;
+}
+
+/* Correct giant title collision */
+.hero h1{
+ margin-top:20px!important;
+ position:relative!important;
+ z-index:3!important;
+}
+
+@media(max-width:900px){
+ .hero{
+  display:flex!important;
+  flex-direction:column!important;
+ }
 }
