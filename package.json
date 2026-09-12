@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/serve-portfolio.mjs portfolio",
-    "build": "node scripts/build-portfolio.mjs",
-    "start": "node scripts/serve-portfolio.mjs out",
-    "dev:legacy": "next dev",
-    "build:legacy": "next build",
-    "start:legacy": "next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
