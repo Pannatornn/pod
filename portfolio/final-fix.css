@@ -7,8 +7,16 @@
 .project-sticker{z-index:8!important}
 .hero-project-info{z-index:7!important}
 .header{z-index:1000!important}
-.header nav{z-index:1001!important}
 body{overflow-x:hidden!important}
+
+/* emergency menu fix */
+.header nav:not(.open){opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(-10px)!important}
+.header nav.open{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important}
+.header nav{z-index:1001!important}
+
+/* restore hero after accidental menu overlay */
+.hero{position:relative!important}
+.hero-copy,.hero-visual{visibility:visible!important}
 
 /* Premium interaction */
 .section,.hero,.about-grid,.featured-project,.project-modules{transition:background-color .35s ease,border-color .35s ease}
@@ -17,18 +25,11 @@ body{overflow-x:hidden!important}
 .button:active,.circle-button:active{transform:scale(.97)!important}
 img{object-fit:cover}
 .hero-visual,.project-figure,.module-card,.award-band{isolation:isolate}
-
-/* Typography and readability */
 .section-intro,.project-copy>p,.dialog-main p{max-width:58ch}
 .project-copy{gap:4px}
-
-/* Better mobile navigation */
 .header nav a{min-height:34px;display:flex;align-items:center}
 
-/* Accessibility */
-@media (prefers-reduced-motion:reduce){
- *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
-}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
 @media(max-width:900px){
  .hero{display:flex!important;flex-direction:column!important;min-height:auto!important;gap:28px!important}
