@@ -9,14 +9,36 @@
 .header{z-index:1000!important}
 .header nav{z-index:1001!important}
 body{overflow-x:hidden!important}
+
+/* Premium UX polish */
+.section,.hero,.about-grid,.featured-project,.project-modules{transition:background-color .35s ease,border-color .35s ease}
+.button,.module-card,.circle-button,.motion-toggle{transition:transform .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease!important}
+.button:active,.circle-button:active{transform:scale(.97)!important}
+img{object-fit:cover}
+.hero-visual,.project-figure,.module-card,.award-band{isolation:isolate}
+
+/* Better reading rhythm */
+.section-intro,.project-copy>p,.dialog-main p{max-width:58ch}
+
+/* Accessibility */
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+
 @media(max-width:900px){
  .hero{display:flex!important;flex-direction:column!important;min-height:auto!important;gap:28px!important}
  .hero h1{font-size:54px!important;line-height:.9!important}
  .hero-visual{min-height:480px!important;width:100%!important}
  .project-sticker{right:12px!important;bottom:80px!important}
+ .about-grid,.featured-project{grid-template-columns:1fr!important}
+ .project-modules{grid-template-columns:1fr!important}
+ .footer-main{grid-template-columns:1fr!important}
 }
+
 @media(max-width:600px){
+ .container{width:calc(100% - 28px)!important}
  .hero h1{font-size:42px!important}
  .hero-actions{flex-wrap:wrap!important}
  .hero-visual{min-height:360px!important}
+ .section{padding:55px 0!important}
 }
