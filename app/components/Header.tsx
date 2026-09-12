@@ -13,7 +13,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="legacy-header">
+    <header className={`legacy-header ${open ? "menu-open" : ""}`}>
       <a className="legacy-brand" href="#home" onClick={() => setOpen(false)}>
         Pannatorn Thongrak
       </a>
@@ -28,7 +28,7 @@ export default function Header() {
         {open ? "ปิด ✕" : "☰"}
       </button>
 
-      <nav className={open ? "open" : ""} aria-label="เมนูหลัก">
+      <nav aria-label="เมนูหลัก">
         {links.map(([title, href]) => (
           <a key={href} href={href} onClick={() => setOpen(false)}>
             {title}
