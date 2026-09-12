@@ -1,0 +1,22 @@
+/* Final layout stability patch */
+.hero{overflow:hidden!important;align-items:stretch!important}
+.hero-copy{z-index:5!important}
+.hero-visual{z-index:1!important;transform:none!important;overflow:hidden!important}
+.hero-photo{overflow:hidden!important}
+.hero-photo img{max-width:none!important}
+.project-sticker{z-index:8!important}
+.hero-project-info{z-index:7!important}
+.header{z-index:1000!important}
+.header nav{z-index:1001!important}
+body{overflow-x:hidden!important}
+@media(max-width:900px){
+ .hero{display:flex!important;flex-direction:column!important;min-height:auto!important;gap:28px!important}
+ .hero h1{font-size:54px!important;line-height:.9!important}
+ .hero-visual{min-height:480px!important;width:100%!important}
+ .project-sticker{right:12px!important;bottom:80px!important}
+}
+@media(max-width:600px){
+ .hero h1{font-size:42px!important}
+ .hero-actions{flex-wrap:wrap!important}
+ .hero-visual{min-height:360px!important}
+}
