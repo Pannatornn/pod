@@ -4,52 +4,50 @@ export default function Home() {
 
   return (
     <main className="portfolio-page">
-      <section className="hero">
+      <nav className="top-nav">
+        <div className="logo">PANNATORN</div>
+        <div className="nav-menu"><a>About</a><a>Skills</a><a>Projects</a><a>Contact</a></div>
+      </nav>
+
+      <section className="hero wix-hero">
         <div className="hero-content">
           <p className="eyebrow">COMPUTER ENGINEERING PORTFOLIO</p>
-          <h1>Pannatorn <span>Thongrak</span></h1>
+          <h1>Pannatorn<br/><span>Thongrak</span></h1>
           <h2>ปัณณธร ทองรักษ์ (ปัน)</h2>
-          <p className="hero-description">Creative Coder • Electronics Developer • Robotics Enthusiast</p>
-          <div className="hero-actions">
-            <button className="button button-primary">View My Work</button>
-            <button className="button">Contact</button>
-          </div>
+          <p className="hero-description">นักเรียนสาย Computer Engineering<br/>สนใจด้าน Coding, Robotics และ Electronics</p>
+          <button className="button button-primary">View My Work</button>
         </div>
-
-        <div className="portrait-card">
-          <div className="avatar">P</div>
+        <div className="portrait-card image-placeholder">
+          <div className="avatar">PHOTO</div>
           <h3>Profile</h3>
-          <p>เกิด 25 กุมภาพันธ์ 2552</p>
-          <p>นักพัฒนาด้าน Coding และวงจรอิเล็กทรอนิกส์</p>
+          <p>Birthday : 25 February 2009</p>
+        </div>
+      </section>
+
+      <section className="section about-section">
+        <h2>About Me</h2>
+        <div className="card">
+          <p>Pannatorn Thongrak (Pun)</p>
+          <p>Creative coder and electronics developer.</p>
         </div>
       </section>
 
       <section className="section">
         <h2>Education</h2>
         <div className="education-card">
-          <p>ประถมศึกษา: โรงเรียนพรศิริกุล</p>
-          <p>มัธยมศึกษา: โรงเรียนสภาราชินี จังหวัดตรัง</p>
+          <p>โรงเรียนพรศิริกุล - ระดับประถมศึกษา</p>
+          <p>โรงเรียนสภาราชินี จังหวัดตรัง - ระดับมัธยมศึกษา</p>
         </div>
       </section>
 
       <section className="section">
         <h2>Technical Skills</h2>
-        <div className="grid">
-          {skills.map((item)=>(<div className="card" key={item}>{item}</div>))}
-        </div>
+        <div className="grid">{skills.map((item)=><div className="card" key={item}>{item}</div>)}</div>
       </section>
 
       <section className="section">
-        <h2>Featured Projects</h2>
-        <div className="grid">
-          {projects.map((item)=>(
-            <div className="card project" key={item}>
-              <h3>{item}</h3>
-              <p>Innovation project development</p>
-              <span>View Details →</span>
-            </div>
-          ))}
-        </div>
+        <h2>Projects</h2>
+        <div className="grid">{projects.map((item)=><div className="card project" key={item}><h3>{item}</h3><span>View Details →</span></div>)}</div>
       </section>
 
       <section className="section">
@@ -57,7 +55,7 @@ export default function Home() {
         <div className="card">Coding • ประกอบวงจรอิเล็กทรอนิกส์ • เล่นกีต้าร์</div>
       </section>
 
-      <footer>© 2026 Pannatorn Thongrak Portfolio</footer>
+      <footer>© 2026 Pannatorn Thongrak</footer>
     </main>
   );
 }
