@@ -1,15 +1,11 @@
 import Image from "next/image";
+import Header from "./components/Header";
 import { projects, skills } from "./data/portfolio";
 
 export default function Home() {
   return (
     <main className="legacy-site">
-      <header className="legacy-header">
-        <a className="legacy-brand" href="#home">Pannatorn Thongrak</a>
-        <nav aria-label="เมนูหลัก">
-          <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
-        </nav>
-      </header>
+      <Header />
 
       <section id="home" className="legacy-hero">
         <div className="legacy-hero-copy">
