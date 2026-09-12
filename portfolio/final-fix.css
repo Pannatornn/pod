@@ -1,4 +1,4 @@
-/* Final layout stability patch */
+/* Final UX/UI completion patch */
 .hero{overflow:hidden!important;align-items:stretch!important}
 .hero-copy{z-index:5!important}
 .hero-visual{z-index:1!important;transform:none!important;overflow:hidden!important}
@@ -10,15 +10,20 @@
 .header nav{z-index:1001!important}
 body{overflow-x:hidden!important}
 
-/* Premium UX polish */
+/* Premium interaction */
 .section,.hero,.about-grid,.featured-project,.project-modules{transition:background-color .35s ease,border-color .35s ease}
 .button,.module-card,.circle-button,.motion-toggle{transition:transform .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease!important}
+.button:hover,.module-card:hover,.circle-button:hover{transform:translateY(-3px)}
 .button:active,.circle-button:active{transform:scale(.97)!important}
 img{object-fit:cover}
 .hero-visual,.project-figure,.module-card,.award-band{isolation:isolate}
 
-/* Better reading rhythm */
+/* Typography and readability */
 .section-intro,.project-copy>p,.dialog-main p{max-width:58ch}
+.project-copy{gap:4px}
+
+/* Better mobile navigation */
+.header nav a{min-height:34px;display:flex;align-items:center}
 
 /* Accessibility */
 @media (prefers-reduced-motion:reduce){
@@ -33,6 +38,7 @@ img{object-fit:cover}
  .about-grid,.featured-project{grid-template-columns:1fr!important}
  .project-modules{grid-template-columns:1fr!important}
  .footer-main{grid-template-columns:1fr!important}
+ .section-heading{flex-direction:column;align-items:flex-start}
 }
 
 @media(max-width:600px){
@@ -41,4 +47,5 @@ img{object-fit:cover}
  .hero-actions{flex-wrap:wrap!important}
  .hero-visual{min-height:360px!important}
  .section{padding:55px 0!important}
+ .footer-main .wordmark{font-size:40px!important}
 }
