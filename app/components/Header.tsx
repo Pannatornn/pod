@@ -21,7 +21,7 @@ export default function Header() {
       <button
         type="button"
         className="menu-toggle"
-        onClick={() => setOpen(!open)}
+        onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-label="เปิดเมนู"
       >
