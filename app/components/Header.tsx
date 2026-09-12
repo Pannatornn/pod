@@ -23,6 +23,7 @@ export default function Header() {
         className="menu-toggle"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-label="เปิดเมนู"
       >
         {open ? "ปิด ✕" : "☰"}
       </button>
