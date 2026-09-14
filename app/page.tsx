@@ -4,10 +4,11 @@ import { projects, skills } from './data/portfolio';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
+import ArchiveShell from './components/ArchiveShell';
 import Image from 'next/image';
 
 export default function Home(){
- return <main className="legacy-site">
+ return <ArchiveShell><main className="legacy-site">
   <Header />
   <Hero />
   <section id="profile" className="legacy-about">
@@ -17,5 +18,5 @@ export default function Home(){
    <div className="legacy-project-list">{projects.map(project=><article key={project.title} className="legacy-project-card"><div className="legacy-project-image"><Image src={project.image} alt={project.title} fill/></div><div><h3>{project.title}</h3><p>{project.description}</p></div></article>)}</div>
   </section>
   <Skills skills={skills}/>
- </main>;
+ </main></ArchiveShell>;
 }
