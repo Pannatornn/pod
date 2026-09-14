@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Achievements from './components/Achievements';
+import EngineerStats from './components/EngineerStats';
 import ArchiveShell from './components/ArchiveShell';
 import Image from 'next/image';
 
@@ -32,9 +33,10 @@ export default function Home(){
 
   <Skills skills={skills}/>
   <Achievements />
+  <EngineerStats />
 
   <section id="contact" className="legacy-section contact-box">
-    <p className="legacy-kicker">04 / CONTACT</p>
+    <p className="legacy-kicker">06 / CONTACT</p>
     <h2>Let's build<br/>something.</h2>
     <p>Pannatorn Thongrak · Robotics & Code Engineering</p>
   </section>
