@@ -4,6 +4,7 @@ import { projects, skills } from './data/portfolio';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
+import Achievements from './components/Achievements';
 import ArchiveShell from './components/ArchiveShell';
 import Image from 'next/image';
 
@@ -30,9 +31,10 @@ export default function Home(){
   </section>
 
   <Skills skills={skills}/>
+  <Achievements />
 
   <section id="contact" className="legacy-section contact-box">
-    <p className="legacy-kicker">03 / CONTACT</p>
+    <p className="legacy-kicker">04 / CONTACT</p>
     <h2>Let's build<br/>something.</h2>
     <p>Pannatorn Thongrak · Robotics & Code Engineering</p>
   </section>
