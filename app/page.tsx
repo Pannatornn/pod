@@ -9,10 +9,11 @@ import EngineerStats from './components/EngineerStats';
 import ProjectDatabase from './components/ProjectDatabase';
 import BootSequence from './components/BootSequence';
 import MotionReveal from './components/MotionReveal';
+import CyberCursor from './components/CyberCursor';
 import ArchiveShell from './components/ArchiveShell';
 
 export default function Home(){
- return <ArchiveShell><BootSequence/><main className="legacy-site">
+ return <ArchiveShell><BootSequence/><CyberCursor/><main className="legacy-site">
   <Header />
   <MotionReveal><Hero /></MotionReveal>
 
