@@ -19,6 +19,7 @@ export const projects = [
     status: "COMPLETED",
     tech: ["ESP32", "AI", "GPS", "IoT"],
     github: "#",
+    architecture: ["Camera Sensor", "AI Vision", "ESP32 Controller", "Robot Movement", "Dashboard"],
   },
   {
     title: "Engineering Camps & Experiments",
@@ -29,5 +30,6 @@ export const projects = [
     status: "RESEARCH",
     tech: ["Python", "MQTT", "Robotics", "Automation"],
     github: "#",
+    architecture: ["Programming", "Embedded System", "Communication", "Prototype Testing"],
   },
 ];
