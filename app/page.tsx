@@ -11,6 +11,8 @@ import BootSequence from './components/BootSequence';
 import MotionReveal from './components/MotionReveal';
 import CyberCursor from './components/CyberCursor';
 import ArchiveShell from './components/ArchiveShell';
+import PortfolioProfile from "./components/PortfolioProfile";
+import PortfolioDocuments from "./components/PortfolioDocuments";
 
 export default function Home(){
  return <ArchiveShell><BootSequence/><CyberCursor/><main className="legacy-site">
