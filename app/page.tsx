@@ -7,10 +7,11 @@ import Skills from './components/Skills';
 import Achievements from './components/Achievements';
 import EngineerStats from './components/EngineerStats';
 import ProjectDatabase from './components/ProjectDatabase';
+import BootSequence from './components/BootSequence';
 import ArchiveShell from './components/ArchiveShell';
 
 export default function Home(){
- return <ArchiveShell><main className="legacy-site">
+ return <ArchiveShell><BootSequence/><main className="legacy-site">
   <Header />
   <Hero />
 
