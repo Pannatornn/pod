@@ -6,8 +6,8 @@ import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Achievements from './components/Achievements';
 import EngineerStats from './components/EngineerStats';
+import ProjectDatabase from './components/ProjectDatabase';
 import ArchiveShell from './components/ArchiveShell';
-import Image from 'next/image';
 
 export default function Home(){
  return <ArchiveShell><main className="legacy-site">
@@ -26,10 +26,7 @@ export default function Home(){
    </div>
   </section>
 
-  <section id="projects" className="legacy-section legacy-projects">
-   <div className="legacy-heading"><p className="legacy-kicker">02 / PROJECT DATABASE</p><h2>Selected<br/>Projects.</h2></div>
-   <div className="legacy-project-list">{projects.map(project=><article key={project.title} className="legacy-project-card"><div className="legacy-project-image"><Image src={project.image} alt={project.title} fill/></div><div><h3>{project.title}</h3><p>{project.description}</p></div></article>)}</div>
-  </section>
+  <ProjectDatabase projects={projects} />
 
   <Skills skills={skills}/>
   <Achievements />
