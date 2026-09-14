@@ -5,11 +5,100 @@
   --indigo:#4f46e5;
 }
 
+* { box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
 body {
  background-color:var(--obsidian);
  color:var(--phosphor);
  font-family:'Courier New',Courier,monospace;
- overflow:hidden;
+ overflow-x:hidden;
+}
+
+.site-header {
+ position:sticky;
+ top:20px;
+ z-index:100;
+ width:min(1100px,92%);
+ margin:20px auto;
+ padding:18px 26px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:30px;
+ background:rgba(10,10,10,.92);
+ border:1px solid rgba(0,255,65,.5);
+ border-radius:16px;
+ backdrop-filter:blur(12px);
+ box-shadow:0 0 25px rgba(0,255,65,.15);
+}
+
+.site-brand {
+ display:flex;
+ flex-direction:column;
+ color:#fff;
+ text-decoration:none;
+ letter-spacing:2px;
+}
+
+.site-brand span {
+ font-size:1.2rem;
+ color:var(--phosphor);
+ font-weight:700;
+}
+
+.site-brand small {
+ font-size:.65rem;
+ color:#aaa;
+ margin-top:4px;
+}
+
+.site-header nav {
+ display:flex;
+ align-items:center;
+ gap:12px;
+}
+
+.site-header nav a {
+ color:#ddd;
+ text-decoration:none;
+ padding:10px 18px;
+ border-radius:999px;
+ transition:.25s ease;
+}
+
+.site-header nav a:hover {
+ color:#000;
+ background:var(--phosphor);
+ transform:translateY(-2px);
+}
+
+.menu-toggle {
+ display:none;
+ background:none;
+ border:1px solid var(--phosphor);
+ color:var(--phosphor);
+ font-size:24px;
+ border-radius:10px;
+ padding:4px 12px;
+}
+
+@media(max-width:800px){
+ .menu-toggle { display:block; }
+ .site-header nav {
+   display:none;
+   position:absolute;
+   top:75px;
+   right:0;
+   width:220px;
+   flex-direction:column;
+   padding:20px;
+   background:#111;
+   border:1px solid var(--phosphor);
+   border-radius:14px;
+ }
+ .site-header nav.nav-open { display:flex; }
 }
 
 .dither-overlay {
@@ -17,8 +106,7 @@ body {
  position:fixed;
  inset:0;
  z-index:99;
- background-image:radial-gradient(circle,rgba(0,0,0,0) 0%,rgba(0,0,0,.5) 100%),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQYV2P8////fwYGBgZGRkZGMI0hISFBMI0hISFBAE9QD/69V967AAAAAElFTkSuQmCC");
- background-size:auto,4px 4px;
+ background-image:radial-gradient(circle,rgba(0,0,0,0) 0%,rgba(0,0,0,.5) 100%);
  opacity:.15;
 }
 
