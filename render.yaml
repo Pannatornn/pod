@@ -7,3 +7,6 @@ services:
     buildCommand: POD_STATIC_EXPORT=1 npm install && POD_STATIC_EXPORT=1 npm run build
     staticPublishPath: ./out
     autoDeployTrigger: commit
+    envVars:
+      - key: POD_STATIC_EXPORT
+        value: "1"
