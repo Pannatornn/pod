@@ -2,7 +2,7 @@
 
 import React,{useState} from 'react';
 import {motion,AnimatePresence} from 'framer-motion';
-import {Terminal,Folder,User,Mail,X,Minus} from 'lucide-react';
+import {Terminal,Folder,User,Mail,X} from 'lucide-react';
 
 const Window=({title,icon:Icon,children,id,active,setActive,onClose}:any)=>(
 <motion.div drag dragMomentum={false} onPointerDown={()=>setActive(id)} initial={{opacity:0}} animate={{opacity:1}} className={`absolute w-96 bg-[#111] border-2 border-gray-600 text-white ${active===id?'z-50':'z-10'}`} style={{left:100+id*30,top:100+id*30}}>
@@ -11,7 +11,8 @@ const Window=({title,icon:Icon,children,id,active,setActive,onClose}:any)=>(
 </motion.div>);
 
 export default function ArchiveOS(){
-const [windows,setWindows]=useState<any[]>([]);const [active,setActive]=useState(null);
+const [windows,setWindows]=useState<any[]>([]);
+const [active,setActive]=useState<number|null>(null);
 const open=(id:number,title:string,icon:any,content:any)=>{if(!windows.find(w=>w.id===id))setWindows([...windows,{id,title,icon,content}]);setActive(id)};
 return <main className="h-screen bg-black overflow-hidden text-green-400 font-mono">
 <div className="p-8 flex gap-8"><IconButton icon={Folder} label="Projects" click={()=>open(1,'PROJECTS',Folder,<Projects/>)}/><IconButton icon={User} label="Identity" click={()=>open(2,'PROFILE',User,<Profile/>)}/><IconButton icon={Terminal} label="History" click={()=>open(3,'EXPERIENCE',Terminal,<History/>)}/><IconButton icon={Mail} label="Contact" click={()=>open(4,'CONTACT',Mail,<Contact/>)}/></div>
