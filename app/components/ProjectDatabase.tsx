@@ -7,6 +7,8 @@ type Project = {
  label:string;
  description:string;
  image:string;
+ tech?:string[];
+ status?:string;
 };
 
 export default function ProjectDatabase({projects}:{projects:Project[]}){
@@ -22,7 +24,11 @@ export default function ProjectDatabase({projects}:{projects:Project[]}){
     <div className="project-info">
       <span>{project.label}</span>
       <h3>{project.title}</h3>
+      <div className="project-status">STATUS: {project.status ?? 'ACTIVE'}</div>
       <p>{project.description}</p>
+      <div className="tech-stack">
+       {(project.tech ?? []).map(item=><span key={item}>{item}</span>)}
+      </div>
       <button>VIEW SYSTEM ↗</button>
     </div>
    </article>)}
