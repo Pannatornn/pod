@@ -22,12 +22,14 @@ export default function Header() {
       <button
         className="menu-toggle"
         onClick={() => setOpen(!open)}
-        aria-label="toggle menu"
+        aria-label={open ? "close menu" : "open menu"}
+        aria-expanded={open}
+        type="button"
       >
         {open ? "×" : "☰"}
       </button>
 
-      <nav className={open ? "nav-open" : ""}>
+      <nav className={open ? "nav-open" : ""} aria-label="main navigation">
         {links.map(([label, href]) => (
           <a key={href} href={href} onClick={() => setOpen(false)}>
             {label}
