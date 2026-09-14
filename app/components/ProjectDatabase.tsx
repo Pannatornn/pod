@@ -10,6 +10,7 @@ type Project = {
  tech?:string[];
  status?:string;
  github?:string;
+ architecture?:string[];
 };
 
 export default function ProjectDatabase({projects}:{projects:Project[]}){
@@ -30,6 +31,10 @@ export default function ProjectDatabase({projects}:{projects:Project[]}){
       <div className="tech-stack">
        {(project.tech ?? []).map(item=><span key={item}>{item}</span>)}
       </div>
+      {project.architecture && <div className="architecture-flow">
+       <strong>SYSTEM FLOW</strong>
+       {project.architecture.map(step=><div key={step}>→ {step}</div>)}
+      </div>}
       <div className="project-actions">
        <button>VIEW SYSTEM ↗</button>
        {project.github && <a href={project.github} target="_blank">GITHUB ↗</a>}
