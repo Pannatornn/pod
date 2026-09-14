@@ -10,15 +10,26 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "ปัณณธร ทองรักษ์ | Robotics, Code & Engineering",
-  description: "Portfolio ของ Pannatorn Thongrak ด้าน Robotics, Programming และ Engineering",
+  title: "ปัณณธร ทองรักษ์ | Robotics Engineer Portfolio",
+  description: "Pannatorn Thongrak Portfolio — Robotics, AI, Embedded System, Programming และ Engineering Projects",
+  keywords: ["Robotics", "AI", "Python", "ESP32", "Engineering", "Portfolio"],
   authors: [{ name: "Pannatorn Thongrak" }],
   alternates: { canonical: "/" },
   icons: { icon: "/icon.svg" },
-  openGraph: { type: "website", locale: "th_TH", url: "/", title: "ปัณณธร ทองรักษ์", description: "Robotics, Programming & Engineering" },
+  openGraph: {
+    type: "website",
+    locale: "th_TH",
+    url: "/",
+    title: "Pannatorn Thongrak | Robotics Engineering",
+    description: "Robotics, AI and Engineering Portfolio",
+  },
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1 };
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#07090d",
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="th"><body className={`${thai.variable} ${poppins.variable}`}>{children}</body></html>;
