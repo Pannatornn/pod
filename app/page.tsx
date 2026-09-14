@@ -8,14 +8,15 @@ import Achievements from './components/Achievements';
 import EngineerStats from './components/EngineerStats';
 import ProjectDatabase from './components/ProjectDatabase';
 import BootSequence from './components/BootSequence';
+import MotionReveal from './components/MotionReveal';
 import ArchiveShell from './components/ArchiveShell';
 
 export default function Home(){
  return <ArchiveShell><BootSequence/><main className="legacy-site">
   <Header />
-  <Hero />
+  <MotionReveal><Hero /></MotionReveal>
 
-  <section id="about" className="legacy-about">
+  <MotionReveal><section id="about" className="legacy-about">
    <div>
     <p className="legacy-kicker">01 / PROFILE</p>
     <h2>Pannatorn<br/>Thongrak.</h2>
@@ -25,18 +26,17 @@ export default function Home(){
     <strong>ENGINEER PROFILE</strong>
     <p>Arduino IDE · Python · C++ · HTML5 · CSS3 · JavaScript · Flask</p>
    </div>
-  </section>
+  </section></MotionReveal>
 
-  <ProjectDatabase projects={projects} />
+  <MotionReveal><ProjectDatabase projects={projects} /></MotionReveal>
+  <MotionReveal><Skills skills={skills}/></MotionReveal>
+  <MotionReveal><Achievements /></MotionReveal>
+  <MotionReveal><EngineerStats /></MotionReveal>
 
-  <Skills skills={skills}/>
-  <Achievements />
-  <EngineerStats />
-
-  <section id="contact" className="legacy-section contact-box">
+  <MotionReveal><section id="contact" className="legacy-section contact-box">
     <p className="legacy-kicker">06 / CONTACT</p>
     <h2>Let's build<br/>something.</h2>
     <p>Pannatorn Thongrak · Robotics & Code Engineering</p>
-  </section>
+  </section></MotionReveal>
  </main></ArchiveShell>;
 }
