@@ -18,6 +18,7 @@ export const projects = [
     image: "/media/solar-robot.png",
     status: "COMPLETED",
     tech: ["ESP32", "AI", "GPS", "IoT"],
+    github: "#",
   },
   {
     title: "Engineering Camps & Experiments",
@@ -27,5 +28,6 @@ export const projects = [
     image: "/media/engineering-camps.png",
     status: "RESEARCH",
     tech: ["Python", "MQTT", "Robotics", "Automation"],
+    github: "#",
   },
 ];
