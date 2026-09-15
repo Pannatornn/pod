@@ -1,7 +1,0 @@
-{
-  "name": "Pannatorn Engineering OS",
-  "version": "1.0.0",
-  "status": "production-ready",
-  "stack": ["Next.js", "React", "TypeScript", "Framer Motion"],
-  "build": "static-export"
-}
