@@ -73,11 +73,11 @@ export const certificatesData = [
   },
   {
     id: "CERT-008",
-    title: "Robotics and AI Frontier Camp 2026 Certificate",
-    issuer: "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (KMITL)",
+    title: "เกียรติบัตรผ่านการอบรม onsite โครงการอบรมพัฒนาศักยภาพด้านหุ่นยนต์และปัญญาประดิษฐ์ 2026 Robotics and AI Frontier Camp 2026 (Mechatronics program)",
+    issuer: "ภาควิชาหุ่นยนต์และปัญญาประดิษฐ์ คณะวิศวกรรมศาสตร์ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
     year: "2026",
-    category: "Robotics & AI Frontier",
-    badge: "⚡ KMITL UNLOCKED",
-    image: "https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&w=600&q=80"
+    category: "Robotics & AI (RAI KMITL)",
+    badge: "⚡ KMITL RAI UNLOCKED",
+    image: "/images/kmitl_rai2026/cert_kmitl_rai2026.jpg"
   }
 ];

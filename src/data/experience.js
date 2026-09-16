@@ -1,11 +1,11 @@
 export const experienceData = [
   {
     missionId: "MISSION 001",
-    organization: "Robotics & AI Frontier Lab",
+    organization: "Robotics & AI Frontier Lab (RAI KMITL)",
     role: "Mechatronics & Vision System Developer",
     duration: "MAY 2026",
-    objective: "การประมวลผลกล้อง AI ตรวจจับวัตถุร่วมกับบอร์ด Arduino Q และระบบสวิตช์ควบคุมอัตโนมัติ Industrial Automation",
-    achievement: "สำเร็จการเรียนรู้กระบวนการพัฒนา Vision AI และ PLC Control System ได้อย่างสมบูรณ์",
+    objective: "การประมวลผลกล้อง AI ตรวจจับวัตถุร่วมกับบอร์ดไมโครคอนโทรลเลอร์ และระบบควบคุม Mechatronics / PLC Industrial Automation ณ ภาควิชาหุ่นยนต์และปัญญาประดิษฐ์ สจล.",
+    achievement: "สำเร็จการอบรม Mechatronics Program, การพัฒนา Vision AI และ PLC Control System ได้อย่างสมบูรณ์",
     status: "COMPLETED",
     icon: "Cpu"
   },

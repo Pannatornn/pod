@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, ShieldCheck, Unlock } from 'lucide-react';
+import { Award, ShieldCheck, Unlock, ZoomIn } from 'lucide-react';
 
-export default function CertificateCard({ cert }) {
+export default function CertificateCard({ cert, onPreview }) {
   return (
     <motion.div
       whileHover={{ y: -6, scale: 1.02 }}
@@ -33,6 +33,23 @@ export default function CertificateCard({ cert }) {
           </p>
         </div>
       </div>
+
+      {/* Certificate Image Thumbnail Preview */}
+      {cert.image && (
+        <div 
+          onClick={(e) => { e.stopPropagation(); onPreview && onPreview(); }}
+          className="relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-neonCyan/40 mb-4 group/img cursor-pointer bg-black/80 shadow-[0_0_12px_rgba(0,255,255,0.15)] hover:border-hotPink hover:shadow-[0_0_20px_rgba(255,0,128,0.4)] transition-all"
+        >
+          <img 
+            src={cert.image} 
+            alt={cert.title} 
+            className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500 filter brightness-95 contrast-105"
+          />
+          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2 text-neonCyan font-mono text-xs">
+            <ZoomIn className="w-4 h-4 text-hotPink animate-pulse" /> คลิกเพื่อดูภาพขยาย
+          </div>
+        </div>
+      )}
 
       {/* Category Tag */}
       <div className="flex items-center justify-between pt-3 border-t border-neonCyan/20 text-xs font-mono">

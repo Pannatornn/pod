@@ -1,21 +1,34 @@
 export const activitiesData = [
   {
     id: "ACT-01",
-    title: "โครงการอบรมพัฒนาศักยภาพด้านหุ่นยนต์ และปัญญาประดิษฐ์ 2569 (Robotics and AI Frontier Camp 2026)",
-    location: "ภาควิชาหุ่นยนต์ และปัญญาประดิษฐ์ คณะวิศวกรรมศาสตร์ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+    title: "โครงการอบรมพัฒนาศักยภาพด้านหุ่นยนต์และปัญญาประดิษฐ์ 2026 (Robotics and AI Frontier Camp 2026 - Mechatronics program)",
+    location: "ภาควิชาหุ่นยนต์และปัญญาประดิษฐ์ (RAI) คณะวิศวกรรมศาสตร์ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (KMITL)",
     date: "2 - 3 พฤษภาคม 2569",
-    tag: "Robotics & AI",
+    tag: "Robotics & AI (KMITL)",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
-        caption: "การเรียนรู้บอร์ด Arduino Q และระบบ AI Camera"
+        url: "/images/kmitl_rai2026/kmitl_group_friends.jpg",
+        caption: "การทดลองระบบ Mechatronics, PLC และระบบเซนเซอร์ควบคุมอัตโนมัติ ณ AIMs Lab สจล."
       },
       {
-        url: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-        caption: "การอบรม Mechatronics Program & Industrial Automation"
+        url: "/images/kmitl_rai2026/kmitl_robot_lab.jpg",
+        caption: "การศึกษาดูงานห้องปฏิบัติการแขนกลและหุ่นยนต์อุตสาหกรรม (ABB & Mitsubishi Electric) ภาควิชา RAI"
+      },
+      {
+        url: "/images/kmitl_rai2026/kmitl_all_participants.jpg",
+        caption: "ภาพถ่ายรวมผู้เข้าร่วมอบรมโครงการ Robotics and AI Frontier Camp 2026 ณ หอประชุมวิศวกรรมศาสตร์ สจล."
+      },
+      {
+        url: "/images/kmitl_rai2026/cert_kmitl_rai2026.jpg",
+        caption: "เกียรติบัตรผ่านการอบรม onsite โครงการ Robotics and AI Frontier Camp 2026 (Mechatronics program)"
       }
     ],
-    description: "ในค่ายนี้ผมได้เรียนรู้การเขียนโปรแกรมและการใช้ AI ร่วมกับบอร์ด Arduino Q ผ่านโปรแกรม Arduino App Lab รวมถึงโมดูลกล้องในการตรวจจับสีและวัตถุด้วยเทคโนโลยี AI ทำให้ผมได้รู้จักเพื่อนใหม่ๆ ได้แลกเปลี่ยนประสบการณ์ความรู้ และฝึกทักษะการทำงานเป็นทีมร่วมกัน\n\nนอกจากนี้ ผมได้เลือกเข้าศึกษาในส่วนของ Mechatronics Program เพื่อเปิดประสบการณ์การเรียนรู้ด้าน Industrial Automation และระบบควบคุม PLC"
+    certificate: {
+      url: "/images/kmitl_rai2026/cert_kmitl_rai2026.jpg",
+      title: "เกียรติบัตรผ่านการอบรมหลักสูตร onsite โครงการอบรมพัฒนาศักยภาพด้านหุ่นยนต์และปัญญาประดิษฐ์ 2026 Robotics and AI Frontier Camp 2026 (Mechatronics program)",
+      issuer: "ภาควิชาหุ่นยนต์และปัญญาประดิษฐ์ คณะวิศวกรรมศาสตร์ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง"
+    },
+    description: "ในค่าย Robotics and AI Frontier Camp 2026 ผมได้ศึกษาเรียนรู้การเขียนโปรแกรมและการประยุกต์ใช้ AI ร่วมกับบอร์ดไมโครคอนโทรลเลอร์และโมดูลกล้อง AI ในการตรวจจับสีและจำแนกวัตถุอัตโนมัติ ได้แลกเปลี่ยนความรู้กับเพื่อนๆ และฝึกทักษะการทำงานเป็นทีมร่วมกัน\n\nนอกจากนี้ ผมได้เลือกเข้าศึกษาในส่วนของ Mechatronics Program เพื่อเปิดโลกทัศน์และเสริมสร้างประสบการณ์จริงด้าน Industrial Automation, ระบบควบคุม PLC และได้ศึกษาดูงานระบบแขนกลอุตสาหกรรม (Industrial Robotic Arms) ของภาควิชาหุ่นยนต์และปัญญาประดิษฐ์ สจล."
   },
   {
     id: "ACT-02",
