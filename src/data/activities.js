@@ -19,8 +19,8 @@ export const activitiesData = [
         caption: "ภาพถ่ายรวมผู้เข้าร่วมอบรมโครงการ Robotics and AI Frontier Camp 2026 ณ หอประชุมวิศวกรรมศาสตร์ สจล."
       },
       {
-        url: "/images/kmitl_rai2026/cert_kmitl_rai2026.jpg",
-        caption: "เกียรติบัตรผ่านการอบรม onsite โครงการ Robotics and AI Frontier Camp 2026 (Mechatronics program)"
+        url: "/images/kmitl_rai2026/kmitl_robot_sim.jpg",
+        caption: "การฝึกปฏิบัติการจำลองและเขียนโปรแกรมควบคุมแขนกลอุตสาหกรรม (Robot Simulation & Teach Pendant)"
       }
     ],
     certificate: {
