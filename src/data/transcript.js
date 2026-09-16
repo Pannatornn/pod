@@ -5,7 +5,7 @@ export const transcriptData = {
     {
       id: "REC-01",
       title: "ใบแสดงผลการเรียนด้านหน้า (Academic Record Front Page)",
-      image: "/images/transcript/transcript_front.jpg"
+      image: "/images/transcript/transcript_fornt_.jpg" 
     },
     {
       id: "REC-02",
