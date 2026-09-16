@@ -4,15 +4,13 @@ export const transcriptData = {
   records: [
     {
       id: "REC-01",
-      title: "ใบแสดงผลการเรียน 1 (Academic Record Page 1)",
-      placeholderText: "นำภาพใบเกรดหน้าแรกมาวางแทนที่ปุ่มนี้",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+      title: "ใบแสดงผลการเรียนด้านหน้า (Academic Record Front Page)",
+      image: "/images/transcrip/transcript_front.jpg"
     },
     {
       id: "REC-02",
-      title: "ใบแสดงผลการเรียน 2 (Academic Record Page 2)",
-      placeholderText: "นำภาพใบเกรดหน้าที่สองมาวางแทนที่ปุ่มนี้",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+      title: "ใบแสดงผลการเรียนด้านหลัง (Academic Record Back Page)",
+      image: "/images/transcrip/transcript_back.jpg"
     }
   ]
 };
