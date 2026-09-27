@@ -9,7 +9,7 @@ const interestIcons = { Bot, BrainCircuit, Zap };
 
 export default function Profile() {
   return (
-    <RetroWindow title="PROFILE // USER RPG CHARACTER SHEET" id="profile">
+    <RetroWindow title="PROFILE" id="profile">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* LEFT: Character Avatar & Quick System Badge */}
         <div className="lg:col-span-5 space-y-6">
