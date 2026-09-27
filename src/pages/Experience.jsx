@@ -9,12 +9,11 @@ export default function Experience() {
   return (
     <RetroWindow title="EXPERIENCES // VIDEO GAME MISSION LOG" id="experiences">
       <div className="space-y-8">
-        <ContestGallery />
         <ContestGallery
           contests={roboticsContests}
           id="robotics-contests"
           title="MITR PHOL ROBOTICS CHAMPIONSHIP"
-          subtitle="การแข่งขันหุ่นยนต์ชิงถ้วยพระราชทานคู่"
+          subtitle="การแข่งขันหุ่นยนต์ระดับประเทศ ชิงถ้วยพระราชทานคู่"
           grouped
         />
         <ContestGallery
@@ -23,6 +22,7 @@ export default function Experience() {
           title="INNOVATION AWARDS"
           subtitle="ผลงานการแข่งขันนวัตกรรม"
         />
+        <ContestGallery />
 
         <div className="border-b border-neonCyan/20 pb-4">
           <h2 className="font-orbitron font-bold text-xl text-neonCyan text-glow-cyan flex items-center gap-2">
