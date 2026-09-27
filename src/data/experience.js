@@ -1,3 +1,35 @@
+export const regionalContests = [
+  {
+    id: "srivijaya-open-house-2026",
+    title: "Srivijaya Fair Open House 2026",
+    date: "26 สิงหาคม 2569",
+    dateISO: "2026-08-26",
+    champion: true,
+    award: "รางวัลชนะเลิศ",
+    description: "การแข่งขันทักษะออกแบบและติดตั้งโซล่าเซลล์ (โซล่าเซลล์สำหรับโหลดแสงสว่าง) ในงานนิทรรศการวิชาการ ราชมงคลศรีวิชัยแฟร์ 2026 ภายใต้แนวคิด UNLOCK+ @ Srivijaya Fair Open House",
+    organization: "คณะวิศวกรรมศาสตร์และเทคโนโลยี มหาวิทยาลัยเทคโนโลยีราชมงคลศรีวิชัย วิทยาเขตตรัง",
+    images: [
+      { file: "srivijaya-solar-competition.png", caption: "การแข่งขันออกแบบและติดตั้งระบบโซล่าเซลล์" },
+      { file: "srivijaya-award-photo.png", caption: "ภาพร่วมกับคณะกรรมการและผู้เข้าร่วมการแข่งขัน" },
+      { file: "srivijaya-winner-certificate.png", caption: "เกียรติบัตรรางวัลชนะเลิศ" }
+    ]
+  },
+  {
+    id: "bit-tech-challenge-2026",
+    title: "BIT Tech Challenge 2026",
+    date: "7 สิงหาคม 2569",
+    dateISO: "2026-08-07",
+    champion: false,
+    award: "รางวัลระดับเหรียญทอง ลำดับที่ 8",
+    description: "การแข่งขันตอบปัญหาทางเทคโนโลยีสารสนเทศระดับภาคใต้ PSU Trang Tech Challenge: ประลองความรู้ไอที ประจำปี 2569",
+    organization: "มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตตรัง",
+    images: [
+      { file: "bit-tech-competition.png", caption: "บรรยากาศการแข่งขันตอบปัญหาทางเทคโนโลยีสารสนเทศ" },
+      { file: "bit-tech-certificate.png", caption: "เกียรติบัตรรางวัลระดับเหรียญทอง ลำดับที่ 8" }
+    ]
+  }
+];
+
 export const experienceData = [
   {
     missionId: "MISSION 001",
