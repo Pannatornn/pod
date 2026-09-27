@@ -13,7 +13,8 @@ export default function Experience() {
           contests={roboticsContests}
           id="robotics-contests"
           title="MITR PHOL ROBOTICS CHAMPIONSHIP"
-          subtitle="MITR PHOL KRABYAI RATCHABURI GRAND ROBOTICS CHAMPIONSHIP 2024 ชิงถ้วยพระราชทาน สมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ สยามบรมราชกุมารี และMITR PHOL KRABYAI RATCHABURI GRAND ROBOTICS CHAMPIONSHIP 2025 X TO BE NUMBER ONE ROBOT 2025 ชิงถ้วยพระราชทาน"
+          subtitle="1. MITR PHOL KRABYAI RATCHABURI GRAND ROBOTICS CHAMPIONSHIP 2024 ชิงถ้วยพระราชทาน สมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ สยามบรมราชกุมารี 
+          2. MITR PHOL KRABYAI RATCHABURI GRAND ROBOTICS CHAMPIONSHIP 2025 X TO BE NUMBER ONE ROBOT 2025 ชิงถ้วยพระราชทาน"
           grouped
         />
         <ContestGallery
