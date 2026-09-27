@@ -49,6 +49,36 @@ export const innovationContests = [
   }
 ];
 
+export const roboticsContests = [
+  {
+    id: "mitr-phol-robotics-2025",
+    title: "MITR PHOL KRABYAI RATCHABURI GRAND ROBOTICS CHAMPIONSHIP 2025",
+    date: "21–23 พฤศจิกายน 2568",
+    dateISO: "2025-11-21",
+    award: "รองชนะเลิศอันดับ 4 ระดับเหรียญทอง",
+    description: "การแข่งขันโครงงานหัวข้อ “นวัตกรรมเพื่อชุมชน” รวมทุกระดับชั้น (ไม่เกิน ม.ปลาย หรือเทียบเท่า) ในการแข่งขันทักษะวิชาการด้านหุ่นยนต์ วิทยาศาสตร์อากาศยาน และโครงงานนวัตกรรมสิ่งประดิษฐ์ ชิงแชมป์ประเทศไทย ประจำปี 2568 ณ โรงเรียนอนุบาลเทศบาลตำบลกรับใหญ่ อำเภอบ้านโป่ง จังหวัดราชบุรี",
+    organization: "กลุ่มมิตรผล • โรงเรียนอนุบาลเทศบาลตำบลกรับใหญ่ • ชมรมวิทยาการหุ่นยนต์แห่งประเทศไทย • ชมรมครูหุ่นยนต์ไทย",
+    images: [
+      { file: "mitr-phol-2025-school-news.jpg", caption: "จดหมายข่าวโรงเรียนสภาราชินี จังหวัดตรัง: ผลการแข่งขันปี 2025", portrait: true },
+      { file: "mitr-phol-2025-certificate.jpg", caption: "เกียรติบัตรรองชนะเลิศอันดับ 4 ระดับเหรียญทอง", portrait: true }
+    ]
+  },
+  {
+    id: "mitr-phol-robotics-2024",
+    title: "MITR PHOL KRABYAI RATCHABURI GRAND ROBOTICS CHAMPIONSHIP 2024",
+    dateLabel: "เกียรติบัตรวันที่",
+    date: "24 พฤศจิกายน 2567",
+    dateISO: "2024-11-24",
+    award: "รองชนะเลิศอันดับ 1",
+    description: "การแข่งขันโครงงานคอนเซปต์ด้านพลังงานแสงอาทิตย์ “ไฟฟรี จากฟ้า” รวมทุกระดับชั้น (ไม่เกิน ม.ปลาย หรือเทียบเท่า) ในการแข่งขันทักษะวิชาการด้านหุ่นยนต์ MITR PHOL KRABYAI RATCHABURI GRAND ROBOTICS CHAMPIONSHIP 2024 ณ โรงเรียนอนุบาลเทศบาลตำบลกรับใหญ่ อำเภอบ้านโป่ง จังหวัดราชบุรี",
+    organization: "โรงเรียนอนุบาลเทศบาลตำบลกรับใหญ่ • ชมรมวิทยาการหุ่นยนต์แห่งประเทศไทย • ชมรมครูหุ่นยนต์ไทย",
+    images: [
+      { file: "mitr-phol-2024-award-photo.jpg", caption: "ภาพร่วมแสดงความยินดีหลังการแข่งขันหุ่นยนต์" },
+      { file: "mitr-phol-2024-certificate.jpg", caption: "เกียรติบัตรรองชนะเลิศอันดับ 1 การแข่งขันปี 2024" }
+    ]
+  }
+];
+
 export const experienceData = [
   {
     missionId: "MISSION 001",
