@@ -110,14 +110,5 @@ export const experienceData = [
     status: "COMPLETED",
     icon: "Trophy"
   },
-  {
-    missionId: "MISSION 004",
-    organization: "Self-Driven Embedded Research & Development",
-    role: "Independent Hardware Developer",
-    duration: "2024 - PRESENT",
-    objective: "สร้างและทดสอบโครงงานหุ่นยนต์ ระบบอัตโนมัติ การออกแบบแผงวงจร และศึกษาด้านปัญญาประดิษฐ์",
-    achievement: "พัฒนาโครงงานหุ่นยนต์พลังงานแสงอาทิตย์และระบบไมโครคอนโทรลเลอร์หลายรูปแบบ",
-    status: "ACTIVE",
-    icon: "Activity"
-  }
+  
 ];
