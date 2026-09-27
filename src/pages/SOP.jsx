@@ -6,7 +6,7 @@ import { ScrollText, Terminal } from 'lucide-react';
 
 export default function SOP() {
   return (
-    <RetroWindow title="STATEMENT OF PURPOSE // MISSION MANIFESTO" id="sop">
+    <RetroWindow title="STATEMENT OF PURPOSE" id="sop">
       <div className="space-y-6">
         <HologramCard title={sopData.title} subtitle={sopData.subtitle}>
           <div className="space-y-4 font-chakra text-sm md:text-base leading-relaxed text-gray-200">
