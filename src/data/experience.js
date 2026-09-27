@@ -30,6 +30,25 @@ export const regionalContests = [
   }
 ];
 
+export const innovationContests = [
+  {
+    id: "cia-2025",
+    title: "CHANGE Innovation Awards 2025 (CIA)",
+    dateLabel: "หนังสือรับรองวันที่",
+    date: "15 สิงหาคม 2568",
+    dateISO: "2025-08-15",
+    award: "ได้รับการรับรองมาตรฐาน CEIN STANDARD",
+    description: "โครงงานหุ่นยนต์กู้ภัยทางน้ำพลังงานแสงอาทิตย์เพื่อค้นหาและช่วยเหลือผู้ประสบอุทกภัย (Solar-powered Search and Victim Emergency Rescue Vessel) โดยทีม Human Commando Wave รหัส CIA25ENG049 นำเสนอแนวคิดการใช้พลังงานแสงอาทิตย์ ระบบควบคุมระยะไกล กล้อง และ GPS สำหรับงานค้นหาและช่วยเหลือผู้ประสบภัย",
+    organization: "CHANGE Education • โครงการประกวดแนวคิดนวัตกรรม ประจำปี 2568",
+    posterLayout: true,
+    images: [
+      { file: "cia-2025-poster-portrait.webp", caption: "โปสเตอร์โครงงาน: บทคัดย่อ วัตถุประสงค์ และการออกแบบระบบ", portrait: true },
+      { file: "cia-2025-poster-landscape.webp", caption: "โปสเตอร์สรุปแนวคิดและขั้นตอนการดำเนินงาน" },
+      { file: "cia-2025-cein-certificate.webp", caption: "หนังสือรับรองมาตรฐาน CEIN STANDARD • ทีม CIA25ENG049" }
+    ]
+  }
+];
+
 export const experienceData = [
   {
     missionId: "MISSION 001",

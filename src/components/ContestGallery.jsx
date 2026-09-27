@@ -2,17 +2,22 @@ import React from 'react';
 import { Award, Trophy } from 'lucide-react';
 import { regionalContests } from '../data/experience';
 
-export default function RegionalContests() {
+export default function ContestGallery({
+  contests = regionalContests,
+  id = 'regional-contests',
+  title = 'REGIONAL CONTESTS',
+  subtitle = 'กิจกรรมการแข่งขันระดับภูมิภาค'
+}) {
   return (
-    <section aria-labelledby="regional-contests-title" className="space-y-6">
+    <section aria-labelledby={`${id}-title`} className="space-y-6">
       <header className="border-b border-neonCyan/20 pb-4">
-        <h2 id="regional-contests-title" className="font-orbitron font-bold text-xl text-neonCyan text-glow-cyan">
-          REGIONAL CONTESTS
+        <h2 id={`${id}-title`} className="font-orbitron font-bold text-xl text-neonCyan text-glow-cyan">
+          {title}
         </h2>
-        <p className="font-chakra text-sm text-hotPink mt-1">กิจกรรมการแข่งขันระดับภูมิภาค</p>
+        <p className="font-chakra text-sm text-hotPink mt-1">{subtitle}</p>
       </header>
 
-      {regionalContests.map((contest) => {
+      {contests.map((contest) => {
         const AwardIcon = contest.champion ? Trophy : Award;
 
         return (
@@ -21,18 +26,21 @@ export default function RegionalContests() {
               <h3 id={`${contest.id}-title`} className="rounded-full border border-hotPink/50 bg-hotPink/15 px-3 py-1.5 font-chakra text-base font-bold text-white">
                 {contest.title}
               </h3>
-              <time dateTime={contest.dateISO} className="font-chakra text-sm text-neonCyan">{contest.date}</time>
+              <p className="font-chakra text-sm text-neonCyan">
+                {contest.dateLabel && <span>{contest.dateLabel} </span>}
+                <time dateTime={contest.dateISO}>{contest.date}</time>
+              </p>
             </header>
 
-            <div className={`grid grid-cols-1 gap-3 ${contest.images.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'}`}>
+            <div className={`grid grid-cols-1 gap-3 ${contest.posterLayout ? 'md:grid-cols-2' : contest.images.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'}`}>
               {contest.images.map((image) => (
-                <figure key={image.file} className="min-w-0">
+                <figure key={image.file} className={`min-w-0 ${contest.posterLayout && image.portrait ? 'md:row-span-2' : ''}`}>
                   <a
                     href={`${import.meta.env.BASE_URL}images/experiences/${image.file}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`เปิดภาพขนาดเต็ม: ${image.caption}`}
-                    className="block aspect-[10/7] overflow-hidden rounded-lg border border-neonCyan/30 bg-[#050510] transition-colors hover:border-hotPink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neonCyan"
+                    className={`block ${image.portrait ? 'aspect-[3179/4494]' : 'aspect-[10/7]'} overflow-hidden rounded-lg border border-neonCyan/30 bg-[#050510] transition-colors hover:border-hotPink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neonCyan`}
                   >
                     <img
                       src={`${import.meta.env.BASE_URL}images/experiences/${image.file}`}

@@ -1,15 +1,21 @@
 import React from 'react';
 import RetroWindow from '../components/RetroWindow';
 import Timeline from '../components/Timeline';
-import RegionalContests from '../components/RegionalContests';
-import { experienceData } from '../data/experience';
+import ContestGallery from '../components/ContestGallery';
+import { experienceData, innovationContests } from '../data/experience';
 import { Briefcase } from 'lucide-react';
 
 export default function Experience() {
   return (
     <RetroWindow title="EXPERIENCES // VIDEO GAME MISSION LOG" id="experiences">
       <div className="space-y-8">
-        <RegionalContests />
+        <ContestGallery />
+        <ContestGallery
+          contests={innovationContests}
+          id="innovation-contests"
+          title="INNOVATION AWARDS"
+          subtitle="ผลงานการแข่งขันนวัตกรรม"
+        />
 
         <div className="border-b border-neonCyan/20 pb-4">
           <h2 className="font-orbitron font-bold text-xl text-neonCyan text-glow-cyan flex items-center gap-2">
