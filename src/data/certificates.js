@@ -79,5 +79,14 @@ export const certificatesData = [
     category: "Robotics & AI (RAI KMITL)",
     badge: "⚡ KMITL RAI UNLOCKED",
     image: "/images/kmitl_rai2026/cert_kmitl_rai2026.jpg"
+  },
+  {
+    id: "CERT-009",
+    title: "วุฒิบัตรเข้าร่วมอบรมหลักสูตร “อุ่นใจไซเบอร์” — Fundamental Level",
+    issuer: "สพฐ. • มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี • กรมสุขภาพจิต • AIS",
+    year: "2025",
+    category: "Digital Citizenship & Cyber Safety",
+    badge: "🛡️ DIGITAL CITIZENSHIP",
+    image: `${import.meta.env.BASE_URL}images/cert_project/aunjai-cyber-2025.jpg`
   }
 ];

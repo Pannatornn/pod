@@ -11,7 +11,7 @@ export const regionalContests = [
     images: [
       { file: "srivijaya-solar-competition.png", caption: "การแข่งขันออกแบบและติดตั้งระบบโซล่าเซลล์" },
       { file: "srivijaya-award-photo.png", caption: "ภาพร่วมกับคณะกรรมการและผู้เข้าร่วมการแข่งขัน" },
-      { file: "srivijaya-winner-certificate.png", caption: "เกียรติบัตรรางวัลชนะเลิศ" }
+      { file: "srivijaya-winner-certificate.jpg", caption: "เกียรติบัตรรางวัลชนะเลิศ" }
     ]
   },
   {
@@ -24,8 +24,20 @@ export const regionalContests = [
     description: "การแข่งขันตอบปัญหาทางเทคโนโลยีสารสนเทศระดับภาคใต้ PSU Trang Tech Challenge: ประลองความรู้ไอที ประจำปี 2569",
     organization: "มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตตรัง",
     images: [
-      { file: "bit-tech-competition.png", caption: "บรรยากาศการแข่งขันตอบปัญหาทางเทคโนโลยีสารสนเทศ" },
+      { file: "bit-tech-competition.jpg", caption: "บรรยากาศการแข่งขันตอบปัญหาทางเทคโนโลยีสารสนเทศ" },
       { file: "bit-tech-certificate.png", caption: "เกียรติบัตรรางวัลระดับเหรียญทอง ลำดับที่ 8" }
+    ]
+  },
+  {
+    id: "tsu-digital-skills-2025",
+    title: "การทดสอบมาตรฐานทักษะดิจิทัล • มหาวิทยาลัยทักษิณ 2025",
+    date: "19 สิงหาคม 2568",
+    dateISO: "2025-08-19",
+    award: "รางวัลระดับดีมาก",
+    description: "การทดสอบวัดทักษะทางด้านดิจิทัลสำหรับนักเรียนระดับมัธยมศึกษาตอนปลาย ในงานสัปดาห์วิทยาศาสตร์แห่งชาติ ส่วนภูมิภาค ประจำปี 2568 ณ มหาวิทยาลัยทักษิณ วิทยาเขตพัทลุง",
+    organization: "คณะวิทยาศาสตร์และนวัตกรรมดิจิทัล มหาวิทยาลัยทักษิณ",
+    images: [
+      { file: "tsu-digital-skills-2025-news.jpg", caption: "จดหมายข่าวโรงเรียนสภาราชินี จังหวัดตรัง: รางวัลระดับดีมากด้านทักษะดิจิทัล", portrait: true }
     ]
   }
 ];

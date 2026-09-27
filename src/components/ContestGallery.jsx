@@ -33,7 +33,7 @@ export default function ContestGallery({
               </p>
             </header>
 
-            <div className={`grid grid-cols-1 gap-3 ${contest.posterLayout ? 'md:grid-cols-2' : contest.images.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'}`}>
+            <div className={`grid grid-cols-1 gap-3 ${contest.images.length === 1 ? 'mx-auto w-full max-w-md' : contest.posterLayout ? 'md:grid-cols-2' : contest.images.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'}`}>
               {contest.images.map((image) => (
                 <figure key={image.file} className={`min-w-0 ${contest.posterLayout && image.portrait ? 'md:row-span-2' : ''}`}>
                   <a
