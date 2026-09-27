@@ -1,7 +1,6 @@
 import React from 'react';
 import RetroWindow from '../components/RetroWindow';
 import HologramCard from '../components/HologramCard';
-import SkillBar from '../components/SkillBar';
 import { profileData } from '../data/profile';
 import { GraduationCap, Code, Cpu, Music, Bot, BrainCircuit, Zap, ShieldCheck } from 'lucide-react';
 
@@ -16,12 +15,11 @@ export default function Profile() {
         <div className="lg:col-span-5 space-y-6">
           <div className="relative rounded-xl overflow-hidden border-2 border-hotPink shadow-[0_0_25px_rgba(255,0,128,0.4)] bg-[#0c051a]">
             <img
-              src={profileData.avatarPlaceholder}
+              src={profileData.avatar}
               alt={profileData.nameEN}
-              className="w-full h-64 md:h-72 object-cover filter brightness-95 contrast-110"
+              className="w-full aspect-[3/4] object-cover object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050510] via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4">
+            <div className="p-4 bg-gradient-to-b from-[#0c051a] to-[#050510]">
               <span className="text-[10px] font-mono text-neonGreen px-2 py-0.5 rounded bg-neonGreen/10 border border-neonGreen/40 font-bold">
                 SYSTEM OPERATOR ID: {profileData.systemId}
               </span>
@@ -99,18 +97,18 @@ export default function Profile() {
             </div>
           </HologramCard>
 
-          {/* Animated Skills */}
-          <HologramCard title="TECHNICAL SKILL METRICS" subtitle="ANIMATES ON VISIBLE">
-            <div className="space-y-3">
-              {profileData.skills.map((skill, idx) => (
-                <SkillBar
-                  key={idx}
-                  name={skill.name}
-                  level={skill.level}
-                  category={skill.category}
-                />
+          {/* Technical Skills */}
+          <HologramCard title="TECHNICAL SKILLS">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {profileData.skills.map((skill) => (
+                <li
+                  key={skill.name}
+                  className="flex items-center min-w-0 rounded-md border border-neonCyan/25 bg-[#0a0518]/70 px-4 py-3 text-sm font-mono font-bold leading-relaxed text-neonCyan sm:last:odd:col-span-2"
+                >
+                  {skill.name}
+                </li>
               ))}
-            </div>
+            </ul>
           </HologramCard>
 
           {/* Talents & Interests */}

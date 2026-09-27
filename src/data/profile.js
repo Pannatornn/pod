@@ -5,7 +5,7 @@ export const profileData = {
   nickname: "ปัน (Pan)",
   dob: "25 กุมภาพันธ์ 2552 (February 25, 2009)",
   title: "Robotics & Artificial Intelligence Engineering Student",
-  avatarPlaceholder: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+  avatar: `${import.meta.env.BASE_URL}images/profile.png`,
   education: [
     {
       level: "ระดับมัธยมศึกษาตอนปลาย",
@@ -24,13 +24,13 @@ export const profileData = {
     }
   ],
   skills: [
-    { name: "C / C++", level: 85, category: "Hardware & Core" },
-    { name: "Python", level: 90, category: "AI & Scripting" },
-    { name: "Arduino IDE", level: 95, category: "Embedded Systems" },
-    { name: "Flask (Python Framework)", level: 80, category: "Backend" },
-    { name: "HTML5 & CSS3", level: 88, category: "Frontend" },
-    { name: "JavaScript (ES5+)", level: 82, category: "Frontend" },
-    { name: "Visual Studio Code", level: 95, category: "Dev Tools" }
+    { name: "C / C++" },
+    { name: "Python" },
+    { name: "Arduino IDE" },
+    { name: "Flask (Python Framework)" },
+    { name: "HTML5 & CSS3" },
+    { name: "JavaScript (ES5+)" },
+    { name: "Visual Studio Code" }
   ],
   talents: [
     { icon: "Code", title: "Coding & Software Engineering", desc: "การเขียนโปรแกรมพัฒนาอัลกอริทึมและระบบควบคุม" },
