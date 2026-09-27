@@ -15,7 +15,7 @@ export default function ContestGallery({
         <h2 id={`${id}-title`} className="font-orbitron font-bold text-xl text-neonCyan text-glow-cyan">
           {title}
         </h2>
-        <p className="font-chakra text-sm text-hotPink mt-1">{subtitle}</p>
+        <p className="font-chakra text-sm text-hotPink mt-1 whitespace-pre-line leading-relaxed">{subtitle}</p>
       </header>
 
       {contests.map((contest) => {
