@@ -9,7 +9,7 @@ export default function Certificates() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <RetroWindow title="CERTIFICATES // ACHIEVEMENT UNLOCK SYSTEM" id="certificates">
+    <RetroWindow title="CERTIFICATES" id="certificates">
       <div className="space-y-6">
         <div className="border-b border-neonCyan/20 pb-4 flex flex-wrap items-center justify-between gap-2">
           <div>
