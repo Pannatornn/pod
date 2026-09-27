@@ -6,11 +6,12 @@ export default function ContestGallery({
   contests = regionalContests,
   id = 'regional-contests',
   title = 'REGIONAL CONTESTS',
-  subtitle = 'กิจกรรมการแข่งขันระดับภูมิภาค'
+  subtitle = 'กิจกรรมการแข่งขันระดับภูมิภาค',
+  grouped = false
 }) {
   return (
-    <section aria-labelledby={`${id}-title`} className="space-y-6">
-      <header className="border-b border-neonCyan/20 pb-4">
+    <section aria-labelledby={`${id}-title`} className={`space-y-6 ${grouped ? 'rounded-xl border border-neonCyan/30 bg-[#0a0518]/80 p-4 md:p-5' : ''}`}>
+      <header className={grouped ? '' : 'border-b border-neonCyan/20 pb-4'}>
         <h2 id={`${id}-title`} className="font-orbitron font-bold text-xl text-neonCyan text-glow-cyan">
           {title}
         </h2>
@@ -21,7 +22,7 @@ export default function ContestGallery({
         const AwardIcon = contest.champion ? Trophy : Award;
 
         return (
-          <article key={contest.id} aria-labelledby={`${contest.id}-title`} className="rounded-xl border border-neonCyan/30 bg-[#0a0518]/80 p-4 md:p-5 space-y-4">
+          <article key={contest.id} aria-labelledby={`${contest.id}-title`} className={`space-y-4 ${grouped ? 'border-t border-neonCyan/20 pt-5' : 'rounded-xl border border-neonCyan/30 bg-[#0a0518]/80 p-4 md:p-5'}`}>
             <header className="flex flex-wrap items-center justify-between gap-3">
               <h3 id={`${contest.id}-title`} className="rounded-full border border-hotPink/50 bg-hotPink/15 px-3 py-1.5 font-chakra text-base font-bold text-white">
                 {contest.title}

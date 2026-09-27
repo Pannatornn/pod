@@ -52,7 +52,7 @@ export const innovationContests = [
 export const roboticsContests = [
   {
     id: "mitr-phol-robotics-2025",
-    title: "MITR PHOL KRABYAI RATCHABURI GRAND ROBOTICS CHAMPIONSHIP 2025",
+    title: "2025 • โครงงาน “นวัตกรรมเพื่อชุมชน”",
     date: "21–23 พฤศจิกายน 2568",
     dateISO: "2025-11-21",
     award: "รองชนะเลิศอันดับ 4 ระดับเหรียญทอง",
@@ -65,7 +65,7 @@ export const roboticsContests = [
   },
   {
     id: "mitr-phol-robotics-2024",
-    title: "MITR PHOL KRABYAI RATCHABURI GRAND ROBOTICS CHAMPIONSHIP 2024",
+    title: "2024 • โครงงานคอนเซปต์ “ไฟฟรี จากฟ้า”",
     dateLabel: "เกียรติบัตรวันที่",
     date: "24 พฤศจิกายน 2567",
     dateISO: "2024-11-24",

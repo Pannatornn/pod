@@ -13,8 +13,9 @@ export default function Experience() {
         <ContestGallery
           contests={roboticsContests}
           id="robotics-contests"
-          title="ROBOTICS CHAMPIONSHIPS"
-          subtitle="กิจกรรมการแข่งขันหุ่นยนต์และโครงงานนวัตกรรม"
+          title="MITR PHOL ROBOTICS CHAMPIONSHIP"
+          subtitle="การแข่งขันหุ่นยนต์ชิงถ้วยพระราชทานคู่"
+          grouped
         />
         <ContestGallery
           contests={innovationContests}
