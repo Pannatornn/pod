@@ -9,7 +9,7 @@ export default function Transcript() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <RetroWindow title="TRANSCRIPT // ACADEMIC RECORDS DATABASE" id="transcript">
+    <RetroWindow title="TRANSCRIPT" id="transcript">
       <div className="space-y-6">
         <div className="border-b border-neonCyan/20 pb-4">
           <h2 className="font-orbitron font-bold text-xl text-neonCyan text-glow-cyan">
