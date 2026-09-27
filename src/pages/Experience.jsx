@@ -7,7 +7,7 @@ import { Briefcase } from 'lucide-react';
 
 export default function Experience() {
   return (
-    <RetroWindow title="EXPERIENCES // VIDEO GAME MISSION LOG" id="experiences">
+    <RetroWindow title="EXPERIENCES" id="experiences">
       <div className="space-y-8">
         <ContestGallery
           contests={roboticsContests}
