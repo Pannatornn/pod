@@ -6,7 +6,7 @@ import { Cpu } from 'lucide-react';
 
 export default function Projects() {
   return (
-    <RetroWindow title="PROJECT ARCHIVE // FUTURISTIC ENGINEERING DATABASE" id="projects">
+    <RetroWindow title="PROJECT ARCHIVE" id="projects">
       <div className="space-y-6">
         <div className="border-b border-neonCyan/20 pb-4 flex flex-wrap items-center justify-between gap-2">
           <div>
